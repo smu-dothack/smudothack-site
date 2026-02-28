@@ -1,0 +1,87 @@
+baseURL = 'https://smudothack.com/'
+languageCode = 'en-sg'
+title = 'SMU .Hack'
+theme = 'dothack'
+
+# Build settings for Tailwind CSS v4
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'
+
+# Mount hugo_stats.json for Tailwind
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "hugo_stats.json"
+    target = "assets/notwatching/hugo_stats.json"
+    disableWatch = true
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+
+[params]
+  description = "SMU .Hack — Singapore Management University's Tech Club. Build. Break. Learn."
+  tagline = "Build. Break. Learn."
+  joinFormURL = "https://forms.gle/your-form-id"
+  githubOrg = "https://github.com/smu-dothack"
+
+  [params.social]
+    discord = ""
+    telegram = ""
+    github = "https://github.com/smu-dothack"
+    instagram = ""
+    linkedin = ""
+    email = ""
+
+[taxonomies]
+  tag = "tags"
+  status = "statuses"
+
+[[menus.main]]
+  name = "Events"
+  url = "/events/"
+  weight = 10
+
+[[menus.main]]
+  name = "About"
+  url = "/about/"
+  weight = 20
+
+[[menus.main]]
+  name = "Community"
+  url = "/community/"
+  weight = 30
+
+[[menus.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 40
+
+[[menus.main]]
+  name = "Join Us"
+  url = "/join/"
+  weight = 50
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "dracula"
+    lineNos = true
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"

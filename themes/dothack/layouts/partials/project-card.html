@@ -1,0 +1,30 @@
+<div class="rounded-xl border border-border bg-surface overflow-hidden group">
+  {{ with .Params.screenshot }}
+    <div class="aspect-video overflow-hidden">
+      <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+    </div>
+  {{ end }}
+  <div class="p-5">
+    <h3 class="text-lg font-heading font-semibold mb-2">{{ .Title }}</h3>
+    {{ with .Description }}
+      <p class="text-sm text-muted mb-3 line-clamp-2">{{ . }}</p>
+    {{ end }}
+    {{/* Tech stack badges */}}
+    {{ with .Params.tech_stack }}
+      <div class="flex flex-wrap gap-2 mb-3">
+        {{ range . }}
+          <span class="px-2 py-0.5 text-xs font-mono rounded bg-bg text-muted border border-border">{{ . }}</span>
+        {{ end }}
+      </div>
+    {{ end }}
+    {{/* Links */}}
+    <div class="flex gap-3">
+      {{ with $.Params.repo_url }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">GitHub &rarr;</a>
+      {{ end }}
+      {{ with $.Params.demo_url }}
+        <a href="{{ . }}" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">Demo &rarr;</a>
+      {{ end }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+{{ $projects := where (where site.RegularPages "Section" "projects") "Params.featured" true }}
+{{ if $projects }}
+<section class="py-20 border-t border-border">
+  <div class="container mx-auto px-6">
+    <div class="flex items-center justify-between mb-12">
+      <h2 class="text-3xl font-heading font-bold">Featured Projects</h2>
+      <a href="/community/" class="text-sm text-accent hover:text-accent-hover transition-colors">
+        See all projects &rarr;
+      </a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range first 3 $projects }}
+        {{ partial "project-card.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}

@@ -1,0 +1,16 @@
+exco:
+  - name: "Member Name"
+    role: "President"
+    bio: "Short bio here."
+    photo: "/images/members/placeholder.jpg"
+    github: "https://github.com/username"
+    linkedin: "https://linkedin.com/in/username"
+    order: 1
+
+  - name: "Member Name"
+    role: "Vice President"
+    bio: "Short bio here."
+    photo: "/images/members/placeholder.jpg"
+    github: ""
+    linkedin: ""
+    order: 2
