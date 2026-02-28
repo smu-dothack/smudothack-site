@@ -1,0 +1,7 @@
+{
+  "name": "smudothack-site",
+  "private": true,
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.0.0"
+  }
+}

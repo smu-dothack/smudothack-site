@@ -1,0 +1,26 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+
+{{/* Open Graph */}}
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+{{/* Tailwind CSS via Hugo Pipes */}}
+{{ with (templates.Defer (dict "key" "global")) }}
+  {{ $opts := dict "inlineImports" true }}
+  {{ $css := resources.Get "css/main.css" | css.TailwindCSS $opts }}
+  {{ if hugo.IsProduction }}
+    {{ $css = $css | minify | fingerprint }}
+  {{ end }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $css.Data.Integrity }}"{{ end }}>
+{{ end }}
+
+{{/* Preload fonts */}}
+<link rel="preload" href="/fonts/SpaceGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/FiraCode-Variable.woff2" as="font" type="font/woff2" crossorigin>

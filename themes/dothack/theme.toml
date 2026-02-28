@@ -1,0 +1,10 @@
+name = "DotHack"
+license = "MIT"
+licenselink = ""
+description = "Custom theme for SMU .Hack tech club website"
+tags = ["dark", "tech", "club"]
+min_version = "0.128.0"
+
+[author]
+  name = "SMU .Hack"
+  homepage = "https://github.com/smu-dothack"

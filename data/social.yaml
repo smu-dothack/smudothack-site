@@ -1,0 +1,20 @@
+platforms:
+  - name: "GitHub"
+    url: "https://github.com/smu-dothack"
+    icon: "github"
+
+  - name: "Discord"
+    url: ""
+    icon: "discord"
+
+  - name: "Telegram"
+    url: ""
+    icon: "telegram"
+
+  - name: "Instagram"
+    url: ""
+    icon: "instagram"
+
+  - name: "LinkedIn"
+    url: ""
+    icon: "linkedin"

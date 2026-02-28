@@ -1,0 +1,50 @@
+<header class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/90 backdrop-blur-md">
+  <nav class="container mx-auto px-6 h-16 flex items-center justify-between">
+    {{/* Logo */}}
+    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <img src="/images/logo/logoOnlyBackgroundless.svg" alt="SMU .Hack" class="h-8 w-auto">
+      <span class="font-heading font-bold text-lg text-text">.Hack</span>
+    </a>
+
+    {{/* Desktop nav */}}
+    <ul class="hidden md:flex items-center gap-8">
+      {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}"
+             class="text-sm font-medium text-muted hover:text-accent transition-colors {{ if $.IsMenuCurrent "main" . }}text-accent{{ end }}">
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+
+    {{/* Mobile menu button */}}
+    <button id="mobile-menu-btn" class="md:hidden text-muted hover:text-accent transition-colors" aria-label="Toggle menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </nav>
+
+  {{/* Mobile nav */}}
+  <div id="mobile-menu" class="hidden md:hidden border-t border-border bg-bg">
+    <ul class="container mx-auto px-6 py-4 space-y-3">
+      {{ range .Site.Menus.main }}
+        <li>
+          <a href="{{ .URL }}" class="block text-muted hover:text-accent transition-colors py-1">
+            {{ .Name }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </div>
+
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</header>
+
+{{/* Spacer for fixed header */}}
+<div class="h-16"></div>

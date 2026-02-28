@@ -1,0 +1,73 @@
+{{ define "main" }}
+{{/* ===== HERO SECTION (Above fold) ===== */}}
+<section class="min-h-[calc(100vh-4rem)] flex flex-col lg:flex-row">
+  {{/* Left: Hero content */}}
+  <div class="w-full lg:w-3/4 flex flex-col justify-center px-6 lg:px-16 py-16">
+    <div class="max-w-2xl">
+      <h1 class="text-5xl lg:text-7xl font-heading font-bold mb-6">
+        <span class="text-accent">.</span>Hack
+      </h1>
+      <p class="text-xl lg:text-2xl text-muted mb-8">{{ .Site.Params.tagline }}</p>
+      <p class="text-lg text-muted/80 mb-10">
+        Singapore Management University's tech club. We build things, break things, and learn together.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="/join/" class="inline-flex items-center px-6 py-3 rounded-lg bg-accent text-bg font-semibold hover:bg-accent-hover transition-colors">
+          Join Us
+        </a>
+        <a href="/events/" class="inline-flex items-center px-6 py-3 rounded-lg border border-border text-text hover:border-accent hover:text-accent transition-colors">
+          View Events
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {{/* Right: Interactive panel */}}
+  <div class="w-full lg:w-1/4 bg-surface border-l border-border flex flex-col min-h-[400px] lg:min-h-0">
+    {{/* Tab buttons */}}
+    <div class="flex border-b border-border overflow-x-auto">
+      <button class="interactive-tab active flex-1 min-w-0 px-3 py-3 text-xs font-mono text-muted hover:text-accent transition-colors whitespace-nowrap border-b-2 border-transparent" data-tab="terminal">
+        Terminal
+      </button>
+      <button class="interactive-tab flex-1 min-w-0 px-3 py-3 text-xs font-mono text-muted hover:text-accent transition-colors whitespace-nowrap border-b-2 border-transparent" data-tab="snake">
+        Snake
+      </button>
+      <button class="interactive-tab flex-1 min-w-0 px-3 py-3 text-xs font-mono text-muted hover:text-accent transition-colors whitespace-nowrap border-b-2 border-transparent" data-tab="typing">
+        Typing
+      </button>
+      <button class="interactive-tab flex-1 min-w-0 px-3 py-3 text-xs font-mono text-muted hover:text-accent transition-colors whitespace-nowrap border-b-2 border-transparent" data-tab="matrix">
+        Matrix
+      </button>
+    </div>
+
+    {{/* Tab panels */}}
+    <div class="flex-1 relative">
+      <div id="panel-terminal" class="interactive-panel absolute inset-0"></div>
+      <div id="panel-snake" class="interactive-panel absolute inset-0 hidden"></div>
+      <div id="panel-typing" class="interactive-panel absolute inset-0 hidden"></div>
+      <div id="panel-matrix" class="interactive-panel absolute inset-0 hidden"></div>
+    </div>
+  </div>
+</section>
+
+{{/* ===== UPCOMING EVENTS ===== */}}
+{{ partial "landing/upcoming-events.html" . }}
+
+{{/* ===== FEATURED PROJECTS ===== */}}
+{{ partial "landing/featured-projects.html" . }}
+
+{{/* ===== ABOUT BRIEF ===== */}}
+{{ partial "landing/about-brief.html" . }}
+
+{{/* ===== CTA BANNER ===== */}}
+{{ partial "landing/cta-banner.html" . }}
+{{ end }}
+
+{{ define "scripts" }}
+{{ $opts := dict "targetPath" "js/landing-bundle.js" "minify" hugo.IsProduction }}
+{{ $js := resources.Get "js/landing/tabs.ts" | js.Build $opts }}
+{{ if hugo.IsProduction }}
+  {{ $js = $js | fingerprint }}
+{{ end }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}
