@@ -5,6 +5,7 @@
       "article",
       "body",
       "button",
+      "code",
       "div",
       "footer",
       "h1",
@@ -207,8 +208,11 @@
     "ids": [
       "email",
       "event-filters",
+      "features",
       "get-in-touch",
+      "how-it-works",
       "how-to-join",
+      "how-to-use",
       "mobile-menu",
       "mobile-menu-btn",
       "our-mission",
@@ -225,6 +229,7 @@
       "tracks",
       "what-we-do",
       "what-youll-learn",
+      "whats-inside",
       "who-can-join",
       "who-we-are",
       "why-join"
