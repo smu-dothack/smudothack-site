@@ -10,5 +10,11 @@
   </main>
   {{ partial "footer.html" . }}
   {{ block "scripts" . }}{{ end }}
+  {{ $statusOpts := dict "targetPath" "js/event-status.js" "minify" hugo.IsProduction }}
+  {{ $statusJs := resources.Get "js/event-status.ts" | js.Build $statusOpts }}
+  {{ if hugo.IsProduction }}
+    {{ $statusJs = $statusJs | fingerprint }}
+  {{ end }}
+  <script src="{{ $statusJs.RelPermalink }}" defer></script>
 </body>
 </html>

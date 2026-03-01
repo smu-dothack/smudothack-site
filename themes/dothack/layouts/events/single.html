@@ -1,7 +1,13 @@
 {{ define "main" }}
-<article class="container mx-auto px-6 py-16 max-w-4xl">
+<article class="container mx-auto px-6 py-16 max-w-4xl"
+  data-start-date="{{ .Params.start_date }}"
+  data-end-date="{{ .Params.end_date }}"
+  data-start-time="{{ .Params.start_time }}"
+  data-end-time="{{ .Params.end_time }}"
+  data-all-day="{{ .Params.all_day }}"
+  data-status="{{ .Params.status }}">
   {{/* Back link */}}
-  <a href="/events/" class="inline-flex items-center gap-1 text-sm text-muted hover:text-accent transition-colors mb-8">
+  <a href="{{ site.Home.RelPermalink }}events/" class="inline-flex items-center gap-1 text-sm text-muted hover:text-accent transition-colors mb-8">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
     </svg>
@@ -12,10 +18,12 @@
   <div class="mb-10">
     {{/* Status badge */}}
     {{ with .Params.status }}
-      <span class="inline-block px-3 py-1 text-xs font-mono rounded mb-4
-        {{ if eq . "up-next" }}bg-accent/20 text-accent
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono rounded mb-4
+        {{ if eq . "ongoing" }}bg-green-500/20 text-green-400
+        {{ else if eq . "up-next" }}bg-accent/20 text-accent
         {{ else if eq . "planning" }}bg-yellow-500/20 text-yellow-400
         {{ else }}bg-muted/20 text-muted{{ end }}">
+        {{ if eq . "ongoing" }}<span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>{{ end }}
         {{ . | humanize }}
       </span>
     {{ end }}
@@ -24,22 +32,54 @@
 
     {{/* Event meta */}}
     <div class="flex flex-wrap gap-6 text-sm text-muted">
-      {{ with .Params.event_date }}
+      {{/* Date */}}
+      {{ if .Params.start_date }}
         <div class="flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
-          {{ . }}
+          {{- $start := time .Params.start_date -}}
+          {{- if .Params.end_date -}}
+            {{ $end := time .Params.end_date }}
+            {{ $start.Format "Jan 2" }} &ndash; {{ $end.Format "Jan 2, 2006" }}
+          {{- else -}}
+            {{ $start.Format "Jan 2, 2006" }}
+          {{- end -}}
+        </div>
+      {{ else }}
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          Date TBC
         </div>
       {{ end }}
-      {{ with .Params.event_time }}
+
+      {{/* Time */}}
+      {{ if .Params.all_day }}
         <div class="flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
-          {{ . }}
+          All day
+        </div>
+      {{ else if .Params.start_time }}
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          {{ .Params.start_time }}{{ with .Params.end_time }} &ndash; {{ . }}{{ end }}
+        </div>
+      {{ else if .Params.start_date }}
+        <div class="flex items-center gap-2">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Time TBC
         </div>
       {{ end }}
+
+      {{/* Location */}}
       {{ with .Params.location }}
         <div class="flex items-center gap-2">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

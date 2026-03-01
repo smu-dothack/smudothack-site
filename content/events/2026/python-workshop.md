@@ -1,11 +1,14 @@
 ---
-title: "Python for Data Analysis"
+title: "Python for Data Analysis (test)"
 date: 2026-01-20
 draft: false
 description: "Hands-on workshop using Python, Pandas, and Matplotlib to analyze real-world datasets."
 status: "done"
-event_date: "2026-01-25"
-event_time: "2:00 PM - 5:00 PM"
+start_date: "2026-01-25"
+end_date: ""
+start_time: "2:00 PM"
+end_time: "5:00 PM"
+all_day: false
 location: "SMU SIS SR 3.3"
 poster: ""
 signup_url: ""

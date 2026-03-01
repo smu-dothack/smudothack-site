@@ -1,12 +1,15 @@
 ---
-title: "Cybersecurity 101"
+title: "Cybersecurity 101 (test)"
 date: 2026-03-10
 draft: false
 description: "An introductory talk on cybersecurity fundamentals, common vulnerabilities, and how to stay safe online."
 status: "planning"
-event_date: "2026-05-10"
-event_time: "TBD"
-location: "TBD"
+start_date: ""
+end_date: ""
+start_time: ""
+end_time: ""
+all_day: false
+location: ""
 poster: ""
 signup_url: ""
 resources_url: ""

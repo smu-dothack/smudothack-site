@@ -1,10 +1,12 @@
-{{ $events := where (where site.RegularPages "Section" "events") "Params.status" "up-next" }}
+{{ $ongoing := where (where site.RegularPages "Section" "events") "Params.status" "ongoing" }}
+{{ $upcoming := where (where site.RegularPages "Section" "events") "Params.status" "up-next" }}
+{{ $events := $ongoing | append $upcoming }}
 {{ if $events }}
 <section class="py-20 border-t border-border">
   <div class="container mx-auto px-6">
     <div class="flex items-center justify-between mb-12">
       <h2 class="text-3xl font-heading font-bold">Upcoming Events</h2>
-      <a href="/events/" class="text-sm text-accent hover:text-accent-hover transition-colors">
+      <a href="{{ site.Home.RelPermalink }}events/" class="text-sm text-accent hover:text-accent-hover transition-colors">
         View all &rarr;
       </a>
     </div>

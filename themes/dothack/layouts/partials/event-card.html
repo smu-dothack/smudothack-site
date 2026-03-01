@@ -1,4 +1,10 @@
-<a href="{{ .Permalink }}" class="block rounded-xl border border-border bg-surface hover:border-accent transition-colors overflow-hidden group">
+<a href="{{ .Permalink }}" class="block rounded-xl border border-border bg-surface hover:border-accent transition-colors overflow-hidden group"
+  data-start-date="{{ .Params.start_date }}"
+  data-end-date="{{ .Params.end_date }}"
+  data-start-time="{{ .Params.start_time }}"
+  data-end-time="{{ .Params.end_time }}"
+  data-all-day="{{ .Params.all_day }}"
+  data-status="{{ .Params.status }}">
   {{ with .Params.poster }}
     <div class="aspect-video overflow-hidden">
       <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
@@ -7,18 +13,39 @@
   <div class="p-5">
     {{/* Status badge */}}
     {{ with .Params.status }}
-      <span class="inline-block px-2 py-0.5 text-xs font-mono rounded
-        {{ if eq . "up-next" }}bg-accent/20 text-accent
+      <span class="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono rounded
+        {{ if eq . "ongoing" }}bg-green-500/20 text-green-400
+        {{ else if eq . "up-next" }}bg-accent/20 text-accent
         {{ else if eq . "planning" }}bg-yellow-500/20 text-yellow-400
         {{ else }}bg-muted/20 text-muted{{ end }}"
         data-status="{{ . }}">
+        {{ if eq . "ongoing" }}<span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>{{ end }}
         {{ . | humanize }}
       </span>
     {{ end }}
     <h3 class="text-lg font-heading font-semibold mt-2 mb-1 group-hover:text-accent transition-colors">{{ .Title }}</h3>
-    {{ with .Params.event_date }}
-      <p class="text-sm text-muted">{{ . }}</p>
+
+    {{/* Date & time display */}}
+    {{ if .Params.start_date }}
+      <p class="text-sm text-muted">
+        {{- $start := time .Params.start_date -}}
+        {{- if .Params.end_date -}}
+          {{ $end := time .Params.end_date }}
+          {{ $start.Format "Jan 2" }} &ndash; {{ $end.Format "Jan 2, 2006" }}
+        {{- else -}}
+          {{ $start.Format "Jan 2, 2006" }}
+        {{- end -}}
+        {{- if not .Params.all_day -}}
+          {{- if .Params.start_time }}
+            &middot; {{ .Params.start_time }}{{ with .Params.end_time }} &ndash; {{ . }}{{ end }}
+          {{- end -}}
+        {{- else }} &middot; All day
+        {{- end -}}
+      </p>
+    {{ else }}
+      <p class="text-sm text-muted">Date TBC</p>
     {{ end }}
+
     {{ with .Description }}
       <p class="text-sm text-muted mt-2 line-clamp-2">{{ . }}</p>
     {{ end }}
