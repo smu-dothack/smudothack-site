@@ -7,25 +7,20 @@
     {{ .Content }}
   </div>
 
-  {{/* Exco Members */}}
-  {{ with .Site.Data.members.exco }}
+  {{/* Our Team - Departments */}}
+  {{ with .Site.Data.members.departments }}
     <section>
-      <h2 class="text-3xl font-heading font-bold mb-8">Our Team</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <h2 class="text-3xl font-heading font-bold mb-10">Our Team</h2>
+      <div class="space-y-12">
         {{ range sort . "order" }}
-          {{ partial "member-card.html" . }}
-        {{ end }}
-      </div>
-    </section>
-  {{ end }}
-
-  {{/* Alumni (optional) */}}
-  {{ with .Site.Data.members.alumni }}
-    <section class="mt-20">
-      <h2 class="text-3xl font-heading font-bold mb-8">Alumni</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range . }}
-          {{ partial "member-card.html" . }}
+          <div>
+            <h3 class="text-2xl font-heading font-semibold mb-4 text-accent">{{ .name }}</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {{ range .members }}
+                {{ partial "member-card.html" . }}
+              {{ end }}
+            </div>
+          </div>
         {{ end }}
       </div>
     </section>

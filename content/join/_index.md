@@ -16,4 +16,4 @@ All SMU students are welcome, regardless of major or experience level. Whether y
 
 ## How to Join
 
-Sign up through our registration form and you'll be added to our community channels.
+Join our Telegram channel to stay updated on our latest events and happenings!
