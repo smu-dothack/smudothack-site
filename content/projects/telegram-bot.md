@@ -1,5 +1,5 @@
 ---
-title: "Attendance Telegram Bot"
+title: "Attendance Telegram Bot (test)"
 date: 2026-01-15
 draft: false
 description: "A Telegram bot that tracks event attendance and sends reminders to club members."
