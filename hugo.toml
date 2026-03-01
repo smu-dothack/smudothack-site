@@ -41,8 +41,8 @@ buildFuture = true
     discord = ""
     telegram = ""
     github = "https://github.com/smu-dothack"
-    instagram = ""
-    linkedin = ""
+    instagram = "https://www.instagram.com/smu.hack/"
+    linkedin = "https://www.linkedin.com/company/smuhack/"
     email = ""
 
 [taxonomies]

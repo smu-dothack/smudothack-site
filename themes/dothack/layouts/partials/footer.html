@@ -14,7 +14,7 @@
       {{/* Quick links */}}
       <div>
         <h3 class="font-heading font-semibold text-sm uppercase tracking-wider text-muted mb-4">Links</h3>
-        <ul class="space-y-2">
+        <ul class="grid grid-cols-2 gap-2">
           {{ range .Site.Menus.main }}
             <li>
               <a href="{{ .URL }}" class="text-sm text-muted hover:text-accent transition-colors">{{ .Name }}</a>
