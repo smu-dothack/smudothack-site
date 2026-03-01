@@ -69,6 +69,19 @@ function writeLines(output: HTMLElement, lines: string[], className?: string): v
   lines.forEach((l) => writeLine(output, l, className));
 }
 
+function showWelcome(output: HTMLElement): void {
+  writeLines(
+    output,
+    [
+      'Welcome to .Hack',
+      '─────────────────',
+      'Type "help" to get started.',
+      '',
+    ],
+    'text-accent'
+  );
+}
+
 function processCommand(output: HTMLElement, cmd: string): void {
   const trimmed = cmd.trim().toLowerCase();
 
@@ -76,6 +89,7 @@ function processCommand(output: HTMLElement, cmd: string): void {
 
   if (trimmed === 'clear') {
     output.innerHTML = '';
+    showWelcome(output);
     return;
   }
 
@@ -113,20 +127,7 @@ export function initTerminal(): void {
   const output = document.getElementById('terminal-output')!;
   const input = document.getElementById('terminal-input') as HTMLInputElement;
 
-  // Welcome message
-  writeLines(
-    output,
-    [
-      '┌──────────────────────┐',
-      '│   Welcome to .Hack   │',
-      '│   ─────────────────   │',
-      '│   Type "help" to      │',
-      '│   get started.        │',
-      '└──────────────────────┘',
-      '',
-    ],
-    'text-accent'
-  );
+  showWelcome(output);
 
   input.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
