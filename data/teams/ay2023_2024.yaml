@@ -1,0 +1,43 @@
+label: "AY2023-2024"
+departments:
+  - name: "Big 5"
+    order: 1
+    members:
+      - name: "Member Name"
+        bio: "Brief bio here."
+
+  - name: "Tech & Google Dev Group"
+    order: 2
+    members:
+      - name: "Member Name"
+        bio: "Brief bio here."
+
+  - name: "Training"
+    order: 3
+    members:
+      - name: "Member Name"
+        bio: "Brief bio here."
+
+  - name: "Cloud"
+    order: 4
+    members:
+      - name: "Member Name"
+        bio: "Brief bio here."
+
+  - name: "Marketing"
+    order: 5
+    members:
+      - name: "Member Name"
+        bio: "Brief bio here."
+
+  - name: "Public Relations"
+    order: 6
+    members:
+      - name: "Member Name"
+        bio: "Brief bio here."
+
+  - name: "Professional Development"
+    order: 7
+    members:
+      - name: "Member Name"
+        bio: "Brief bio here."

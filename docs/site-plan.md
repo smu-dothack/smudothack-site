@@ -82,7 +82,9 @@ smudothack-site/
 │   ├── contact/_index.md
 │   └── join/_index.md
 ├── data/
-│   ├── members.yaml                 # Exco profiles
+│   ├── teams/                       # Team members (per academic year)
+│   │   ├── ay2025_2026.yaml
+│   │   └── ay2024_2025.yaml
 │   └── social.yaml                  # Social platform links
 ├── docs/                            # Contributor guides
 │   ├── site-plan.md                 # This document
@@ -147,7 +149,14 @@ smudothack-site/
 ### About (`/about/`)
 
 - Club description and mission statement
-- Exco member cards: photo, name, role, short bio, GitHub + LinkedIn links
+- Current team members grouped by department (name + bio)
+- Link to Past Teams page
+
+### Past Teams (`/about/past-teams/`)
+
+- Filter tabs by academic year (client-side JS)
+- Same department + member card layout as About page
+- Automatically populated from `data/teams/` files excluding the current year
 
 ### Community (`/community/`)
 
@@ -161,7 +170,7 @@ smudothack-site/
 ### Join Us (`/join/`)
 
 - Membership info, benefits, and instructions
-- CTA button linking to external signup form (Google Form)
+- CTA button linking to Telegram channel
 
 ---
 
@@ -214,27 +223,24 @@ Project description in markdown...
 
 To add a project: see [docs/adding-projects.md](adding-projects.md)
 
-### Members (`data/members.yaml`)
+### Members (`data/teams/*.yaml`)
 
-Members are stored in a single YAML file (not individual pages):
+Team members are stored in per-year YAML files. The current year is set via `currentTeamYear` in `hugo.toml`. Past years automatically appear on the Past Teams page.
 
 ```yaml
-exco:
-  - name: "President Name"
-    role: "President"
-    bio: "Short bio here."
-    photo: "/images/members/president.jpg"
-    github: "https://github.com/username"
-    linkedin: "https://linkedin.com/in/username"
+label: "AY2025-2026"
+departments:
+  - name: "Big 4"
     order: 1
+    members:
+      - name: "Member Name"
+        bio: "Is the President and an Information Systems undergrad."
 
-  - name: "Vice President Name"
-    role: "Vice President"
-    bio: "Short bio here."
-    photo: "/images/members/vp.jpg"
-    github: ""
-    linkedin: ""
+  - name: "Tech & Google Dev Group"
     order: 2
+    members:
+      - name: "Member Name"
+        bio: "Is a Computer Science undergrad."
 ```
 
 To edit members: see [docs/editing-members.md](editing-members.md)
@@ -246,7 +252,7 @@ To edit members: see [docs/editing-members.md](editing-members.md)
 | Decision | Rationale |
 |----------|-----------|
 | **Custom theme** | No existing Hugo theme matches the dark hacker aesthetic + interactive panel + custom content types |
-| **Members in YAML** (not markdown) | No individual URLs needed; one file is simpler to edit |
+| **Members in per-year YAML** | No individual URLs needed; year transition is just adding a new file and updating a config param |
 | **Events as markdown** | Each event gets its own URL, long-form content, PR-friendly workflow |
 | **Vanilla JS** (not p5.js) | ~20KB total vs ~800KB; Canvas API is sufficient for all 4 features |
 | **Tailwind v4** (not SCSS) | Contributors never touch CSS; theme maps cleanly to config |

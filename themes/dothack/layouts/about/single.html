@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="container mx-auto px-6 py-16">
+  {{/* Back link */}}
+  <a href="{{ site.Home.RelPermalink }}about/" class="inline-flex items-center gap-1 text-sm text-muted hover:text-accent transition-colors mb-8">
+    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    </svg>
+    Back to About
+  </a>
+
+  <h1 class="text-4xl font-heading font-bold mb-10">{{ .Title }}</h1>
+
+  {{ $currentYear := .Site.Params.currentTeamYear }}
+  {{ $pastTeams := slice }}
+  {{ range $key, $team := .Site.Data.teams }}
+    {{ if ne $key $currentYear }}
+      {{ $pastTeams = $pastTeams | append (merge $team (dict "key" $key)) }}
+    {{ end }}
+  {{ end }}
+
+  {{ if $pastTeams }}
+    {{/* Year filter tabs */}}
+    <div class="flex flex-wrap gap-3 mb-10" id="year-filters">
+      {{ range sort $pastTeams "label" "desc" }}
+        <button class="filter-tab" data-filter="{{ .key }}">{{ .label }}</button>
+      {{ end }}
+    </div>
+
+    {{/* Team sections per year */}}
+    {{ range sort $pastTeams "label" "desc" }}
+      <div class="team-year hidden" data-team-year="{{ .key }}">
+        <div class="space-y-12">
+          {{ range sort .departments "order" }}
+            <div>
+              <h3 class="text-2xl font-heading font-semibold mb-4 text-accent">{{ .name }}</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+                {{ range .members }}
+                  {{ partial "member-card.html" . }}
+                {{ end }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  {{ else }}
+    <p class="text-muted">No past teams yet.</p>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ $opts := dict "targetPath" "js/past-teams-filter.js" "minify" hugo.IsProduction }}
+{{ $js := resources.Get "js/past-teams-filter.ts" | js.Build $opts }}
+{{ if hugo.IsProduction }}
+  {{ $js = $js | fingerprint }}
+{{ end }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}

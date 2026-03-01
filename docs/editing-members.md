@@ -1,74 +1,54 @@
-# How to Edit Exco / Member Info
+# How to Edit Team Members
 
-Member profiles are stored in a single file: `data/members.yaml`.
+Team members are stored in per-year YAML files under `data/teams/`. The current team year is set in `hugo.toml` via the `currentTeamYear` param.
 
 ## File Structure
 
+Each academic year has its own file (e.g., `data/teams/ay2025_2026.yaml`):
+
 ```yaml
-exco:
-  - name: "Full Name"
-    role: "President"
-    bio: "A short bio (1-2 sentences)."
-    photo: "/images/members/name.jpg"
-    github: "https://github.com/username"
-    linkedin: "https://linkedin.com/in/username"
+label: "AY2025-2026"
+departments:
+  - name: "Big 4"
     order: 1
+    members:
+      - name: "Full Name"
+        bio: "Is the President and an Information Systems undergrad."
 
-  - name: "Another Member"
-    role: "Vice President"
-    bio: "Short bio here."
-    photo: "/images/members/another.jpg"
-    github: ""
-    linkedin: ""
+      - name: "Another Member"
+        bio: "Is the Vice President and a Software Engineering undergrad."
+
+  - name: "Tech & Google Dev Group"
     order: 2
-
-alumni:
-  - name: "Past Member"
-    role: "President (2024-2025)"
-    bio: ""
-    photo: "/images/members/past.jpg"
-    github: ""
-    linkedin: ""
+    members:
+      - name: "Member Name"
+        bio: "Is a Computer Science undergrad."
 ```
 
 ## Adding a New Member
 
-1. Open `data/members.yaml`
-2. Add a new entry under `exco:` (keep the indentation — 2 spaces)
-3. Add their profile photo to `static/images/members/`
+1. Open the current team file (check `hugo.toml` for `currentTeamYear` to find which file)
+2. Find the correct department
+3. Add a new entry under `members:` (keep the indentation — 2 spaces)
 4. Submit a PR
-
-### Profile Photo Guidelines
-
-- Square aspect ratio (e.g., 400x400px)
-- JPG or PNG, under 200KB
-- Name the file consistently: `firstname-lastname.jpg`
 
 ## Updating a Member
 
-Edit the relevant fields in `data/members.yaml`. Common updates:
+Edit the relevant fields (`name`, `bio`) in the appropriate year file.
 
-- Change `role` after elections
-- Update `bio`
-- Add/update `github` or `linkedin` URLs
+## Changing Department Order
 
-## Changing Display Order
+Change the `order` field on the department. Lower numbers appear first.
 
-Change the `order` field. Lower numbers appear first.
+## Transitioning to a New Academic Year
 
-## Moving Members to Alumni
-
-When exco members graduate or step down:
-
-1. Cut their entry from the `exco:` section
-2. Paste it under the `alumni:` section
-3. Update their `role` to include the year (e.g., `"President (2024-2025)"`)
-4. Remove the `order` field (alumni don't need ordering)
+1. Create a new file: `data/teams/ay20XX_20YY.yaml` with the new team
+2. Update `hugo.toml`: change `currentTeamYear` to match the new filename (without `.yaml`)
+3. Done — the previous year's file automatically appears on the Past Teams page
 
 ## YAML Syntax Tips
 
 - Use **2 spaces** for indentation (not tabs)
-- Strings with special characters need quotes: `"VP (Tech)"`
-- Empty values: use `""` for empty strings
+- Strings with special characters need quotes: `"Tech & Google Dev Group"`
 - Each member entry starts with `- name:`
 - Make sure all entries are aligned at the same indentation level

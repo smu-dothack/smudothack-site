@@ -9,7 +9,7 @@ Guides for maintaining and updating the SMU .Hack website.
 | Run the site locally | [local-development.md](local-development.md) |
 | Add a new event | [adding-events.md](adding-events.md) |
 | Add a project | [adding-projects.md](adding-projects.md) |
-| Edit exco/member info | [editing-members.md](editing-members.md) |
+| Edit team members | [editing-members.md](editing-members.md) |
 | Check content guidelines | [content-style-guide.md](content-style-guide.md) |
 | Understand the full site architecture | [site-plan.md](site-plan.md) |
 
@@ -24,7 +24,7 @@ content/about/_index.md  → About page text
 content/join/_index.md   → Join Us page text
 content/contact/_index.md → Contact page text
 content/community/_index.md → Community page text
-data/members.yaml        → Exco member profiles
+data/teams/*.yaml        → Team member profiles (per academic year)
 data/social.yaml         → Social media links
 static/images/           → All images
 hugo.toml                → Site configuration
