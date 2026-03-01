@@ -1,8 +1,9 @@
 <header class="fixed top-0 left-0 right-0 z-50 border-b border-border bg-bg/90 backdrop-blur-md">
   <nav class="container mx-auto px-6 h-16 flex items-center justify-between">
     {{/* Logo */}}
-    <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
-      <img src="/images/logo/logoOnlyBackgroundless.svg" alt="SMU .Hack" class="h-8 w-auto">
+    {{ $base := site.Home.RelPermalink }}
+    <a href="{{ $base }}" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+      <img src="{{ $base }}images/logo/logoOnlyBackgroundless.svg" alt="SMU .Hack" class="h-8 w-auto">
       <span class="font-heading font-bold text-lg text-text">.Hack</span>
     </a>
 
