@@ -1,11 +1,14 @@
 ---
-title: "Spring Hackathon 2026"
+title: "Spring Hackathon 2026 (test)"
 date: 2026-03-05
 draft: false
 description: "48-hour hackathon — build something awesome with your team and compete for prizes."
 status: "up-next"
-event_date: "2026-04-05"
-event_time: "9:00 AM (Sat) - 9:00 AM (Mon)"
+start_date: "2026-04-05"
+end_date: "2026-04-07"
+start_time: "9:00 AM"
+end_time: "9:00 AM"
+all_day: false
 location: "SMU Campus Green"
 poster: ""
 signup_url: "https://forms.gle/example"

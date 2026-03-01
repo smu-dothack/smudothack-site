@@ -1,11 +1,14 @@
 ---
-title: "Intro to Git & GitHub"
+title: "Intro to Git & GitHub (test)"
 date: 2026-02-15
 draft: false
 description: "Learn the fundamentals of version control with Git and collaborative workflows on GitHub."
 status: "done"
-event_date: "2026-02-15"
-event_time: "7:00 PM - 9:00 PM"
+start_date: "2026-02-15"
+end_date: ""
+start_time: "7:00 PM"
+end_time: "9:00 PM"
+all_day: false
 location: "SMU SIS SR B1-1"
 poster: ""
 signup_url: ""

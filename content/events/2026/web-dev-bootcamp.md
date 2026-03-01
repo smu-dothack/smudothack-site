@@ -1,11 +1,14 @@
 ---
-title: "Web Dev Bootcamp"
+title: "Web Dev Bootcamp (test)"
 date: 2026-03-01
 draft: false
 description: "Build your first website from scratch with HTML, CSS, and JavaScript in this intensive workshop."
 status: "up-next"
-event_date: "2026-03-15"
-event_time: "10:00 AM - 4:00 PM"
+start_date: "2026-03-01"
+end_date: ""
+start_time: "5:40 PM"
+end_time: "5:42 PM"
+all_day: false
 location: "SMU SIS Seminar Room 4.1"
 poster: ""
 signup_url: "https://forms.gle/example"

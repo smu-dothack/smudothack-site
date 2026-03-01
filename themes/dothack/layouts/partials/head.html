@@ -21,6 +21,7 @@
 {{ end }}
 
 {{/* Preload fonts */}}
-<link rel="preload" href="/fonts/SpaceGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/FiraCode-Variable.woff2" as="font" type="font/woff2" crossorigin>
+{{ $base := site.Home.RelPermalink }}
+<link rel="preload" href="{{ $base }}fonts/SpaceGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ $base }}fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ $base }}fonts/FiraCode-Variable.woff2" as="font" type="font/woff2" crossorigin>

@@ -18,8 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
 
       cards.forEach((card) => {
-        card.style.display =
-          filter === 'all' || card.dataset.eventStatus === filter ? '' : 'none';
+        const status = card.dataset.eventStatus;
+        const visible =
+          filter === 'all' ||
+          (filter === 'live' && status !== 'done') ||
+          status === filter;
+        card.style.display = visible ? '' : 'none';
       });
     });
   });

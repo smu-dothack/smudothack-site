@@ -1,4 +1,4 @@
-baseURL = 'https://smudothack.com/'
+baseURL = 'https://smu-dothack.github.io/smudothack-site/'
 languageCode = 'en-sg'
 title = 'SMU .Hack'
 theme = 'dothack'
