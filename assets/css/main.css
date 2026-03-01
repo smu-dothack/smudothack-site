@@ -67,7 +67,7 @@
 @layer components {
   /* Interactive panel tab styles */
   .interactive-tab.active {
-    @apply text-accent border-b-accent;
+    @apply text-accent border-b-accent bg-bg/80;
   }
 
   /* Event filter tabs */

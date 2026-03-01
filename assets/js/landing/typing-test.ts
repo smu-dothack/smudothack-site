@@ -17,7 +17,7 @@ let startTime: number | null;
 let typed: string;
 let finished: boolean;
 let display: HTMLElement;
-let input: HTMLInputElement;
+let input: HTMLTextAreaElement;
 let stats: HTMLElement;
 
 function escapeHtml(text: string): string {
@@ -86,13 +86,13 @@ export function initTypingTest(): void {
       </div>
       <div id="typing-display" class="flex-1 overflow-y-auto bg-bg rounded border border-border p-3 mb-2 whitespace-pre-wrap leading-relaxed"></div>
       <div id="typing-stats" class="text-xs text-muted text-center py-1 hidden"></div>
-      <input id="typing-input" type="text"
-        class="bg-transparent text-text border border-border rounded px-3 py-2 outline-none focus:border-accent transition-colors"
-        placeholder="Start typing..." autocomplete="off" spellcheck="false">
+      <textarea id="typing-input" rows="1"
+        class="bg-transparent text-text border border-border rounded px-3 py-2 outline-none focus:border-accent transition-colors resize-none"
+        placeholder="Start typing..." autocomplete="off" spellcheck="false"></textarea>
     </div>`;
 
   display = document.getElementById('typing-display')!;
-  input = document.getElementById('typing-input') as HTMLInputElement;
+  input = document.getElementById('typing-input') as HTMLTextAreaElement;
   stats = document.getElementById('typing-stats')!;
 
   document.getElementById('typing-restart')!.addEventListener('click', newSnippet);
@@ -106,12 +106,7 @@ export function initTypingTest(): void {
   });
 
   input.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (finished) return;
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      input.value += '\n';
-      input.dispatchEvent(new Event('input'));
-    }
+    if (e.key === 'Tab') e.preventDefault();
   });
 
   newSnippet();

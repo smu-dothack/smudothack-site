@@ -8,13 +8,14 @@ interface Point {
   y: number;
 }
 
-const GRID_SIZE = 15;
+const GRID_SIZE = 12;
 const TICK_MS = 120;
 
 let canvas: HTMLCanvasElement;
 let ctx: CanvasRenderingContext2D;
 let scoreEl: HTMLElement;
-let tileCount: number;
+let tileCountX: number;
+let tileCountY: number;
 let snake: Point[];
 let food: Point;
 let dx = 0;
@@ -25,16 +26,16 @@ let gameOver = false;
 
 function resize(): void {
   const container = canvas.parentElement!;
-  const size = Math.min(container.clientWidth - 8, 300);
-  canvas.width = size;
-  canvas.height = size;
-  tileCount = Math.floor(size / GRID_SIZE);
+  canvas.width = container.clientWidth - 8;
+  canvas.height = container.clientHeight - 52;
+  tileCountX = Math.floor(canvas.width / GRID_SIZE);
+  tileCountY = Math.floor(canvas.height / GRID_SIZE);
 }
 
 function placeFood(): void {
   food = {
-    x: Math.floor(Math.random() * tileCount),
-    y: Math.floor(Math.random() * tileCount),
+    x: Math.floor(Math.random() * tileCountX),
+    y: Math.floor(Math.random() * tileCountY),
   };
   for (const seg of snake) {
     if (seg.x === food.x && seg.y === food.y) {
@@ -46,8 +47,8 @@ function placeFood(): void {
 
 function reset(): void {
   resize();
-  const mid = Math.floor(tileCount / 2);
-  snake = [{ x: mid, y: mid }];
+  const mid = { x: Math.floor(tileCountX / 2), y: Math.floor(tileCountY / 2) };
+  snake = [{ x: mid.x, y: mid.y }];
   dx = 0;
   dy = 0;
   score = 0;
@@ -95,8 +96,8 @@ function update(): void {
   }
 
   const head: Point = {
-    x: (snake[0].x + dx + tileCount) % tileCount,
-    y: (snake[0].y + dy + tileCount) % tileCount,
+    x: (snake[0].x + dx + tileCountX) % tileCountX,
+    y: (snake[0].y + dy + tileCountY) % tileCountY,
   };
 
   // Self collision
@@ -124,13 +125,13 @@ export function initSnake(): void {
   if (!panel) return;
 
   panel.innerHTML = `
-    <div class="flex flex-col h-full items-center justify-center p-3">
-      <div class="flex items-center justify-between w-full mb-2 px-1">
+    <div class="flex flex-col h-full p-3">
+      <div class="flex items-center justify-between mb-2 px-1">
         <span class="text-xs font-mono text-muted">Score: <span id="snake-score">0</span></span>
+        <span class="text-xs font-mono text-muted">Arrow keys / WASD</span>
         <button id="snake-restart" class="text-xs font-mono text-accent hover:text-accent-hover transition-colors">Restart</button>
       </div>
-      <canvas id="snake-canvas" class="border border-border rounded bg-bg w-full" style="image-rendering: pixelated;"></canvas>
-      <p class="text-xs text-muted mt-2 font-mono">Arrow keys or WASD to move</p>
+      <canvas id="snake-canvas" class="rounded bg-bg flex-1" style="image-rendering: pixelated;"></canvas>
     </div>`;
 
   canvas = document.getElementById('snake-canvas') as HTMLCanvasElement;
