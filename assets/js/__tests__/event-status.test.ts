@@ -87,6 +87,7 @@ describe('computeStatus', () => {
     startTime: '7:00 PM',
     endTime: '9:00 PM',
     allDay: false,
+    autoStatus: true,
   };
 
   it('returns "ongoing" when now is during the event', () => {
@@ -129,6 +130,12 @@ describe('computeStatus', () => {
     expect(computeStatus({ ...base, startDate: '' }, now)).toBeNull();
   });
 
+  // autoStatus: false skips computation
+  it('returns null when autoStatus is false', () => {
+    const now = new Date('2026-03-15T20:00:00');
+    expect(computeStatus({ ...base, autoStatus: false }, now)).toBeNull();
+  });
+
   // All-day events
   it('returns "ongoing" for all-day event during the day', () => {
     const allDay: EventData = {
@@ -138,6 +145,7 @@ describe('computeStatus', () => {
       startTime: '',
       endTime: '',
       allDay: true,
+      autoStatus: true,
     };
     const now = new Date('2026-03-15T14:00:00');
     expect(computeStatus(allDay, now)).toBe('ongoing');
@@ -151,6 +159,7 @@ describe('computeStatus', () => {
       startTime: '',
       endTime: '',
       allDay: true,
+      autoStatus: true,
     };
     const now = new Date('2026-03-16T00:00:00');
     expect(computeStatus(allDay, now)).toBe('done');
@@ -165,6 +174,7 @@ describe('computeStatus', () => {
       startTime: '9:00 AM',
       endTime: '5:00 PM',
       allDay: false,
+      autoStatus: true,
     };
     const now = new Date('2026-03-15T12:00:00');
     expect(computeStatus(multiDay, now)).toBe('ongoing');
@@ -178,6 +188,7 @@ describe('computeStatus', () => {
       startTime: '9:00 AM',
       endTime: '5:00 PM',
       allDay: false,
+      autoStatus: true,
     };
     const now = new Date('2026-03-16T17:01:00');
     expect(computeStatus(multiDay, now)).toBe('done');
@@ -192,6 +203,7 @@ describe('computeStatus', () => {
       startTime: '7:00 PM',
       endTime: '9:00 PM',
       allDay: false,
+      autoStatus: true,
     };
     const now = new Date('2026-03-15T20:00:00');
     expect(computeStatus(noEnd, now)).toBe('ongoing');

@@ -52,9 +52,11 @@ export interface EventData {
   startTime: string;
   endTime: string;
   allDay: boolean;
+  autoStatus: boolean;
 }
 
 export function computeStatus(data: EventData, now: Date): EventStatus | null {
+  if (!data.autoStatus) return null;
   if (!data.current || data.current === 'planning' || data.current === 'done') return null;
   if (!data.startDate) return null;
 

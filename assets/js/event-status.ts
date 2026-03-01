@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startTime: card.dataset.startTime || '',
         endTime: card.dataset.endTime || '',
         allDay: card.dataset.allDay === 'true',
+        autoStatus: card.dataset.autoStatus !== 'false',
       },
       now
     );
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startTime: article.dataset.startTime || '',
         endTime: article.dataset.endTime || '',
         allDay: article.dataset.allDay === 'true',
+        autoStatus: article.dataset.autoStatus !== 'false',
       },
       now
     );
@@ -74,4 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const badge = article.querySelector<HTMLElement>('[data-status]');
     if (badge) updateBadge(badge, newStatus);
   });
+
+  // Notify other scripts (e.g. events-filter) that statuses have been updated
+  document.dispatchEvent(new CustomEvent('event-statuses-updated'));
 });

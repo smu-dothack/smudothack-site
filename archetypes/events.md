@@ -4,6 +4,7 @@ date: {{ .Date }}
 draft: false
 description: ""
 status: "planning"
+auto_status: true
 start_date: ""
 end_date: ""
 start_time: ""

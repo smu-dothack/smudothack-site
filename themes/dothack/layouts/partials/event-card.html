@@ -1,10 +1,12 @@
+{{ $status := cond (eq .Params.status "confirmed") "up-next" .Params.status }}
 <a href="{{ .Permalink }}" class="block rounded-xl border border-border bg-surface hover:border-accent transition-colors overflow-hidden group"
   data-start-date="{{ .Params.start_date }}"
   data-end-date="{{ .Params.end_date }}"
   data-start-time="{{ .Params.start_time }}"
   data-end-time="{{ .Params.end_time }}"
   data-all-day="{{ .Params.all_day }}"
-  data-status="{{ .Params.status }}">
+  data-auto-status="{{ .Params.auto_status | default true }}"
+  data-status="{{ $status }}">
   {{ with .Params.poster }}
     <div class="aspect-video overflow-hidden">
       <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
@@ -12,7 +14,7 @@
   {{ end }}
   <div class="p-5">
     {{/* Status badge */}}
-    {{ with .Params.status }}
+    {{ with $status }}
       <span class="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono rounded
         {{ if eq . "ongoing" }}bg-green-500/20 text-green-400
         {{ else if eq . "up-next" }}bg-accent/20 text-accent

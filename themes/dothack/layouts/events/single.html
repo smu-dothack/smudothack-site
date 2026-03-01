@@ -1,11 +1,13 @@
 {{ define "main" }}
+{{ $status := cond (eq .Params.status "confirmed") "up-next" .Params.status }}
 <article class="container mx-auto px-6 py-16 max-w-4xl"
   data-start-date="{{ .Params.start_date }}"
   data-end-date="{{ .Params.end_date }}"
   data-start-time="{{ .Params.start_time }}"
   data-end-time="{{ .Params.end_time }}"
   data-all-day="{{ .Params.all_day }}"
-  data-status="{{ .Params.status }}">
+  data-auto-status="{{ .Params.auto_status | default true }}"
+  data-status="{{ $status }}">
   {{/* Back link */}}
   <a href="{{ site.Home.RelPermalink }}events/" class="inline-flex items-center gap-1 text-sm text-muted hover:text-accent transition-colors mb-8">
     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -17,12 +19,13 @@
   {{/* Header */}}
   <div class="mb-10">
     {{/* Status badge */}}
-    {{ with .Params.status }}
+    {{ with $status }}
       <span class="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono rounded mb-4
         {{ if eq . "ongoing" }}bg-green-500/20 text-green-400
         {{ else if eq . "up-next" }}bg-accent/20 text-accent
         {{ else if eq . "planning" }}bg-yellow-500/20 text-yellow-400
-        {{ else }}bg-muted/20 text-muted{{ end }}">
+        {{ else }}bg-muted/20 text-muted{{ end }}"
+        data-status="{{ . }}">
         {{ if eq . "ongoing" }}<span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>{{ end }}
         {{ . | humanize }}
       </span>

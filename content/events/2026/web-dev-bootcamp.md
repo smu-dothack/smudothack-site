@@ -3,7 +3,8 @@ title: "Web Dev Bootcamp (test)"
 date: 2026-03-01
 draft: false
 description: "Build your first website from scratch with HTML, CSS, and JavaScript in this intensive workshop."
-status: "up-next"
+status: "confirmed"
+auto_status: true
 start_date: "2026-03-01"
 end_date: ""
 start_time: "5:40 PM"
