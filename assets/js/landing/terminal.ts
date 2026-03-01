@@ -88,7 +88,7 @@ function processCommand(output: HTMLElement, cmd: string): void {
   writeLine(output, `$ ${trimmed}`, 'text-muted');
 
   if (trimmed === 'clear') {
-    output.innerHTML = '';
+    output.replaceChildren();
     showWelcome(output);
     return;
   }
