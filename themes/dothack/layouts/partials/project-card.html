@@ -1,11 +1,11 @@
-<div class="rounded-xl border border-border bg-surface overflow-hidden group">
+<a href="{{ .RelPermalink }}" class="rounded-xl border border-border bg-surface overflow-hidden group block hover:border-accent/50 transition-colors">
   {{ with .Params.screenshot }}
     <div class="aspect-video overflow-hidden">
       <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
     </div>
   {{ end }}
   <div class="p-5">
-    <h3 class="text-lg font-heading font-semibold mb-2">{{ .Title }}</h3>
+    <h3 class="text-lg font-heading font-semibold mb-2 group-hover:text-accent transition-colors">{{ .Title }}</h3>
     {{ with .Description }}
       <p class="text-sm text-muted mb-3 line-clamp-2">{{ . }}</p>
     {{ end }}
@@ -20,11 +20,11 @@
     {{/* Links */}}
     <div class="flex gap-3">
       {{ with $.Params.repo_url }}
-        <a href="{{ . }}" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">GitHub &rarr;</a>
+        <span class="text-sm text-accent">GitHub &rarr;</span>
       {{ end }}
       {{ with $.Params.demo_url }}
-        <a href="{{ . }}" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">Demo &rarr;</a>
+        <span class="text-sm text-accent">Demo &rarr;</span>
       {{ end }}
     </div>
   </div>
-</div>
+</a>
