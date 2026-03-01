@@ -5,7 +5,7 @@ draft: false
 description: "The very site you're looking at — built with Hugo, Tailwind CSS, and TypeScript."
 screenshot: ""
 repo_url: "https://github.com/smu-dothack/smudothack-site"
-demo_url: "https://smudothack.com"
+demo_url: ""
 tech_stack: ["Hugo", "Tailwind CSS", "TypeScript"]
 authors: [".Hack Tech Team"]
 featured: true

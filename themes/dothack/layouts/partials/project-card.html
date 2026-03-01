@@ -1,30 +1,32 @@
-<a href="{{ .RelPermalink }}" class="rounded-xl border border-border bg-surface overflow-hidden group block hover:border-accent/50 transition-colors">
-  {{ with .Params.screenshot }}
-    <div class="aspect-video overflow-hidden">
-      <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-    </div>
-  {{ end }}
-  <div class="p-5">
-    <h3 class="text-lg font-heading font-semibold mb-2 group-hover:text-accent transition-colors">{{ .Title }}</h3>
-    {{ with .Description }}
-      <p class="text-sm text-muted mb-3 line-clamp-2">{{ . }}</p>
-    {{ end }}
-    {{/* Tech stack badges */}}
-    {{ with .Params.tech_stack }}
-      <div class="flex flex-wrap gap-2 mb-3">
-        {{ range . }}
-          <span class="px-2 py-0.5 text-xs font-mono rounded bg-bg text-muted border border-border">{{ . }}</span>
-        {{ end }}
+<div class="rounded-xl border border-border bg-surface overflow-hidden group hover:border-accent/50 transition-colors">
+  <a href="{{ .RelPermalink }}" class="block">
+    {{ with .Params.screenshot }}
+      <div class="aspect-video overflow-hidden">
+        <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
       </div>
     {{ end }}
-    {{/* Links */}}
-    <div class="flex gap-3">
-      {{ with $.Params.repo_url }}
-        <span class="text-sm text-accent">GitHub &rarr;</span>
+    <div class="p-5 pb-0">
+      <h3 class="text-lg font-heading font-semibold mb-2 group-hover:text-accent transition-colors">{{ .Title }}</h3>
+      {{ with .Description }}
+        <p class="text-sm text-muted mb-3 line-clamp-2">{{ . }}</p>
       {{ end }}
-      {{ with $.Params.demo_url }}
-        <span class="text-sm text-accent">Demo &rarr;</span>
+      {{/* Tech stack badges */}}
+      {{ with .Params.tech_stack }}
+        <div class="flex flex-wrap gap-2">
+          {{ range . }}
+            <span class="px-2 py-0.5 text-xs font-mono rounded bg-bg text-muted border border-border">{{ . }}</span>
+          {{ end }}
+        </div>
       {{ end }}
     </div>
+  </a>
+  {{/* Links */}}
+  <div class="flex gap-3 p-5 pt-3">
+    {{ with .Params.repo_url }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">GitHub &rarr;</a>
+    {{ end }}
+    {{ with .Params.demo_url }}
+      <a href="{{ . }}" target="_blank" rel="noopener" class="text-sm text-accent hover:text-accent-hover transition-colors">Website &rarr;</a>
+    {{ end }}
   </div>
-</a>
+</div>
