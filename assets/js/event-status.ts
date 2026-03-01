@@ -5,68 +5,12 @@
  * Runs on page load — works in real-time without needing a site rebuild.
  */
 
-type EventStatus = 'planning' | 'up-next' | 'ongoing' | 'done';
-
-interface StatusStyle {
-  bg: string;
-  text: string;
-  label: string;
-  pulse: boolean;
-}
-
-const STATUS_STYLES: Record<EventStatus, StatusStyle> = {
-  ongoing: { bg: 'bg-green-500/20', text: 'text-green-400', label: 'Ongoing', pulse: true },
-  'up-next': { bg: 'bg-accent/20', text: 'text-accent', label: 'Up Next', pulse: false },
-  planning: { bg: 'bg-yellow-500/20', text: 'text-yellow-400', label: 'Planning', pulse: false },
-  done: { bg: 'bg-muted/20', text: 'text-muted', label: 'Done', pulse: false },
-};
-
-const ALL_STATUS_CLASSES = Object.values(STATUS_STYLES).flatMap((s) => [s.bg, s.text]);
-
-function parseTime(timeStr: string): { hours: number; minutes: number } | null {
-  const match = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
-  if (!match) return null;
-  let hours = parseInt(match[1]);
-  const minutes = parseInt(match[2]);
-  const period = match[3].toUpperCase();
-  if (period === 'PM' && hours !== 12) hours += 12;
-  if (period === 'AM' && hours === 12) hours = 0;
-  return { hours, minutes };
-}
-
-function buildDate(dateStr: string, timeStr: string, fallbackEndOfDay: boolean): Date | null {
-  if (!dateStr) return null;
-  if (timeStr) {
-    const t = parseTime(timeStr);
-    if (t) {
-      return new Date(
-        `${dateStr}T${String(t.hours).padStart(2, '0')}:${String(t.minutes).padStart(2, '0')}:00`
-      );
-    }
-  }
-  return new Date(dateStr + (fallbackEndOfDay ? 'T23:59:59' : 'T00:00:00'));
-}
-
-function computeStatus(el: HTMLElement, now: Date): EventStatus | null {
-  const current = el.dataset.status as EventStatus;
-  if (!current || current === 'planning' || current === 'done') return null;
-
-  const startDate = el.dataset.startDate || '';
-  if (!startDate) return null;
-
-  const endDate = el.dataset.endDate || '';
-  const startTime = el.dataset.startTime || '';
-  const endTime = el.dataset.endTime || '';
-  const allDay = el.dataset.allDay === 'true';
-
-  const eventStart = buildDate(startDate, allDay ? '' : startTime, false);
-  const eventEnd = buildDate(endDate || startDate, allDay ? '' : endTime, true);
-  if (!eventStart || !eventEnd) return null;
-
-  if (now >= eventStart && now <= eventEnd) return 'ongoing';
-  if (now > eventEnd) return 'done';
-  return null;
-}
+import {
+  type EventStatus,
+  STATUS_STYLES,
+  ALL_STATUS_CLASSES,
+  computeStatus,
+} from './event-status.logic';
 
 function updateBadge(badge: HTMLElement, newStatus: EventStatus): void {
   const style = STATUS_STYLES[newStatus];
@@ -90,7 +34,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event cards on list / landing pages — data attrs are on the <a> element
   document.querySelectorAll<HTMLElement>('a[data-start-date]').forEach((card) => {
-    const newStatus = computeStatus(card, now);
+    const newStatus = computeStatus(
+      {
+        current: card.dataset.status as EventStatus,
+        startDate: card.dataset.startDate || '',
+        endDate: card.dataset.endDate || '',
+        startTime: card.dataset.startTime || '',
+        endTime: card.dataset.endTime || '',
+        allDay: card.dataset.allDay === 'true',
+      },
+      now
+    );
     if (!newStatus) return;
 
     // Update the badge inside the card
@@ -104,7 +58,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Single event page — data attrs are on the <article> element
   document.querySelectorAll<HTMLElement>('article[data-start-date]').forEach((article) => {
-    const newStatus = computeStatus(article, now);
+    const newStatus = computeStatus(
+      {
+        current: article.dataset.status as EventStatus,
+        startDate: article.dataset.startDate || '',
+        endDate: article.dataset.endDate || '',
+        startTime: article.dataset.startTime || '',
+        endTime: article.dataset.endTime || '',
+        allDay: article.dataset.allDay === 'true',
+      },
+      now
+    );
     if (!newStatus) return;
 
     const badge = article.querySelector<HTMLElement>('[data-status]');

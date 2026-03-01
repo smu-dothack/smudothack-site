@@ -1,7 +1,11 @@
 {
   "name": "smudothack-site",
   "private": true,
+  "scripts": {
+    "test": "vitest run"
+  },
   "devDependencies": {
-    "@tailwindcss/cli": "^4.0.0"
+    "@tailwindcss/cli": "^4.0.0",
+    "vitest": "^4.0.18"
   }
 }
