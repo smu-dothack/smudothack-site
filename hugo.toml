@@ -36,6 +36,7 @@ buildFuture = true
   tagline = "Build. Break. Learn."
   joinFormURL = "https://t.me/+wY8y_HFsNq5iZDVl"
   githubOrg = "https://github.com/smu-dothack"
+  currentTeamYear = "ay2025_2026"
 
   [params.social]
     discord = ""

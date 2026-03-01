@@ -1,3 +1,4 @@
+label: "AY2025-2026"
 departments:
   - name: "Big 4"
     order: 1
@@ -63,21 +64,19 @@ departments:
       - name: "Wai Zin Lin"
         bio: "Is a Computer Science undergrad."
 
-  - name: "Professional Development"
-    order: 7
+  - name: "Marketing"
+    order: 5
     members:
-      - name: "Chua Jia An"
-        bio: "Is the Professional Development Director and a Computer Science undergrad."
-      - name: "Ho Wan Jing Vanetia"
+      - name: "Cassia Tay Kaixin"
+        bio: "Is the Marketing Director and an Information Systems undergrad."
+      - name: "Tan Geok Jia"
         bio: "Is an Information Systems undergrad."
-      - name: "Teo Mou Kai"
-        bio: "Is a Computer Science undergrad."
-      - name: "Pramithi Ashok Anand"
-        bio: "Is a Computing and Law undergrad."
-      - name: "Sheryl Chan Swee Yann"
+      - name: "Aashmiin Kaur"
+        bio: "Is an Accounting undergrad."
+      - name: "Agnella Agrata"
         bio: "Is an Information Systems undergrad."
-      - name: "Charissa Tan Shuen En"
-        bio: "Is a Computer Science undergrad."
+      - name: "Josette Ong Chu Wen"
+        bio: "Is an Information Systems undergrad."
 
   - name: "Public Relations"
     order: 6
@@ -93,16 +92,18 @@ departments:
       - name: "Li Shiyin"
         bio: "Is an Information Systems undergrad."
 
-  - name: "Marketing"
-    order: 5
+  - name: "Professional Development"
+    order: 7
     members:
-      - name: "Cassia Tay Kaixin"
-        bio: "Is the Marketing Director and an Information Systems undergrad."
-      - name: "Tan Geok Jia"
+      - name: "Chua Jia An"
+        bio: "Is the Professional Development Director and a Computer Science undergrad."
+      - name: "Ho Wan Jing Vanetia"
         bio: "Is an Information Systems undergrad."
-      - name: "Aashmiin Kaur"
-        bio: "Is an Accounting undergrad."
-      - name: "Agnella Agrata"
+      - name: "Teo Mou Kai"
+        bio: "Is a Computer Science undergrad."
+      - name: "Pramithi Ashok Anand"
+        bio: "Is a Computing and Law undergrad."
+      - name: "Sheryl Chan Swee Yann"
         bio: "Is an Information Systems undergrad."
-      - name: "Josette Ong Chu Wen"
-        bio: "Is an Information Systems undergrad."
+      - name: "Charissa Tan Shuen En"
+        bio: "Is a Computer Science undergrad."

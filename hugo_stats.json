@@ -146,6 +146,7 @@
       "min-w-0",
       "mt-1",
       "mt-12",
+      "mt-16",
       "mt-2",
       "mt-8",
       "mx-auto",
@@ -188,6 +189,7 @@
       "sm:grid-cols-2",
       "space-y-12",
       "space-y-3",
+      "team-year",
       "text-2xl",
       "text-3xl",
       "text-4xl",
@@ -250,7 +252,8 @@
       "what-youll-learn",
       "who-can-join",
       "who-we-are",
-      "why-join"
+      "why-join",
+      "year-filters"
     ]
   }
 }
