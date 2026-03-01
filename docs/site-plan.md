@@ -185,7 +185,8 @@ Each event is a markdown file in a year subdirectory with this front matter:
 title: "Intro to Git Workshop"
 date: 2026-03-01
 description: "Learn the basics of Git and GitHub"
-status: "up-next"         # done | up-next | ongoing | planning
+status: "confirmed"        # planning | confirmed | done (ongoing/done auto-computed)
+auto_status: true           # Auto-track ongoing/done from dates (default: true)
 start_date: "2026-03-15"  # Event start date (empty = TBC)
 end_date: ""               # End date for multi-day events (empty = single-day)
 start_time: "7:00 PM"    # Start time (empty = TBC)

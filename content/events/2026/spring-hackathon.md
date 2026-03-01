@@ -3,7 +3,8 @@ title: "Spring Hackathon 2026 (test)"
 date: 2026-03-05
 draft: false
 description: "48-hour hackathon — build something awesome with your team and compete for prizes."
-status: "up-next"
+status: "confirmed"
+auto_status: true
 start_date: "2026-04-05"
 end_date: "2026-04-07"
 start_time: "9:00 AM"

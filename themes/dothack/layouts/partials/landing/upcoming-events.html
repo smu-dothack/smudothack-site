@@ -1,6 +1,7 @@
 {{ $ongoing := where (where site.RegularPages "Section" "events") "Params.status" "ongoing" }}
 {{ $upcoming := where (where site.RegularPages "Section" "events") "Params.status" "up-next" }}
-{{ $events := $ongoing | append $upcoming }}
+{{ $confirmed := where (where site.RegularPages "Section" "events") "Params.status" "confirmed" }}
+{{ $events := $ongoing | append $upcoming | append $confirmed }}
 {{ if $events }}
 <section class="py-20 border-t border-border">
   <div class="container mx-auto px-6">

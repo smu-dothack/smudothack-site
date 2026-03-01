@@ -48,7 +48,8 @@ title: "My Event Title"
 date: 2026-03-01                    # When this page was created (for Hugo sorting)
 draft: false                         # Set to true to hide from the site
 description: "A short summary of the event for cards and SEO."
-status: "planning"                   # Options: planning, up-next, ongoing, done
+status: "planning"                   # Options: planning, confirmed, done (see below)
+auto_status: true                    # Auto-track ongoing/done from dates (default: true)
 start_date: "2026-04-15"            # Event start date (leave empty for TBC)
 end_date: ""                         # End date for multi-day events (leave empty for single-day)
 start_time: "7:00 PM"              # Start time (leave empty for TBC)
@@ -64,14 +65,20 @@ tags: ["workshop", "python"]         # Tags for categorization
 
 ### Status Values
 
-| Status | Meaning | When to use |
-|--------|---------|-------------|
-| `planning` | Event is being planned, details may change | Initial state, details still TBC |
-| `up-next` | Confirmed and coming soon | Date and details are finalised |
-| `ongoing` | Event is currently live/happening | During the event (especially multi-day) |
-| `done` | Event has happened | After the event ends |
+| Status | Displays as | When to use |
+|--------|-------------|-------------|
+| `planning` | Planning | Initial state, details still TBC |
+| `confirmed` | Up Next | Date and details are finalised |
+| `done` | Done | After the event ends (only needed if `auto_status: false`) |
 
-Update the status as the event progresses: `planning` → `up-next` → `ongoing` → `done`.
+### Auto Status Tracking
+
+When `auto_status: true` (the default), you only need to set `planning` or `confirmed` in the markdown. The site automatically computes `ongoing` and `done` at runtime based on the event's dates and times — no rebuild or manual update needed.
+
+- `planning` → stays as Planning (not auto-tracked)
+- `confirmed` → auto-updates to Ongoing when the event starts, then Done when it ends
+
+When `auto_status: false`, all status changes are manual. Use `planning`, `up-next`, `ongoing`, or `done` and update them yourself as the event progresses.
 
 ### Date & Time Examples
 
