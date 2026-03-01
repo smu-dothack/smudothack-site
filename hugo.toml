@@ -50,13 +50,13 @@ buildFuture = true
   status = "statuses"
 
 [[menus.main]]
-  name = "Events"
-  url = "/events/"
+  name = "About"
+  url = "/about/"
   weight = 10
 
 [[menus.main]]
-  name = "About"
-  url = "/about/"
+  name = "Events"
+  url = "/events/"
   weight = 20
 
 [[menus.main]]
