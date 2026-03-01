@@ -1,7 +1,8 @@
-baseURL = 'https://smudothack.com/'
+baseURL = 'https://smu-dothack.github.io/smudothack-site/'
 languageCode = 'en-sg'
 title = 'SMU .Hack'
 theme = 'dothack'
+buildFuture = true
 
 # Build settings for Tailwind CSS v4
 [build]
@@ -40,8 +41,8 @@ theme = 'dothack'
     discord = ""
     telegram = ""
     github = "https://github.com/smu-dothack"
-    instagram = ""
-    linkedin = ""
+    instagram = "https://www.instagram.com/smu.hack/"
+    linkedin = "https://www.linkedin.com/company/smuhack/"
     email = ""
 
 [taxonomies]
@@ -49,13 +50,13 @@ theme = 'dothack'
   status = "statuses"
 
 [[menus.main]]
-  name = "Events"
-  url = "/events/"
+  name = "About"
+  url = "/about/"
   weight = 10
 
 [[menus.main]]
-  name = "About"
-  url = "/about/"
+  name = "Events"
+  url = "/events/"
   weight = 20
 
 [[menus.main]]

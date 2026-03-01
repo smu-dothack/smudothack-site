@@ -72,7 +72,9 @@ smudothack-site/
 │   ├── about/_index.md
 │   ├── events/
 │   │   ├── _index.md
-│   │   └── *.md                     # Individual events
+│   │   └── <year>/                  # Year subdirectories (2025/, 2026/, ...)
+│   │       ├── _index.md
+│   │       └── *.md                 # Individual events
 │   ├── community/_index.md
 │   ├── projects/
 │   │   ├── _index.md
@@ -137,9 +139,10 @@ smudothack-site/
 
 ### Events (`/events/`)
 
-- **Filter tabs**: All | Up Next | Planning | Done (client-side JS)
+- **Filter tabs**: All | Ongoing | Up Next | Planning | Done (client-side JS)
 - **Grid of event cards**: poster thumbnail, title, date, status badge
 - Each card links to its own event page with full details
+- Events are organised into year subdirectories (`content/events/2026/`, etc.)
 
 ### About (`/about/`)
 
@@ -164,18 +167,21 @@ smudothack-site/
 
 ## Content Types
 
-### Events (`content/events/*.md`)
+### Events (`content/events/<year>/*.md`)
 
-Each event is a markdown file with this front matter:
+Each event is a markdown file in a year subdirectory with this front matter:
 
 ```yaml
 ---
 title: "Intro to Git Workshop"
 date: 2026-03-01
 description: "Learn the basics of Git and GitHub"
-status: "up-next"         # done | up-next | planning
-event_date: "2026-03-15"
-event_time: "7:00 PM - 9:00 PM"
+status: "up-next"         # done | up-next | ongoing | planning
+start_date: "2026-03-15"  # Event start date (empty = TBC)
+end_date: ""               # End date for multi-day events (empty = single-day)
+start_time: "7:00 PM"    # Start time (empty = TBC)
+end_time: "9:00 PM"      # End time
+all_day: false             # true = no time shown
 location: "SMU SIS SR B1-1"
 poster: "/images/events/git-workshop.jpg"
 signup_url: "https://forms.gle/..."

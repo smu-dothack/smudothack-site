@@ -2,9 +2,10 @@
   <div class="container mx-auto px-6 py-12">
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {{/* Brand */}}
+      {{ $base := site.Home.RelPermalink }}
       <div>
-        <a href="/" class="flex items-center gap-3 mb-4">
-          <img src="/images/logo/logoOnlyBackgroundless.svg" alt="SMU .Hack" class="h-8 w-auto">
+        <a href="{{ $base }}" class="flex items-center gap-3 mb-4">
+          <img src="{{ $base }}images/logo/logoOnlyBackgroundless.svg" alt="SMU .Hack" class="h-8 w-auto">
           <span class="font-heading font-bold text-lg">.Hack</span>
         </a>
         <p class="text-muted text-sm">{{ .Site.Params.description }}</p>
@@ -13,7 +14,7 @@
       {{/* Quick links */}}
       <div>
         <h3 class="font-heading font-semibold text-sm uppercase tracking-wider text-muted mb-4">Links</h3>
-        <ul class="space-y-2">
+        <ul class="grid grid-cols-2 gap-2">
           {{ range .Site.Menus.main }}
             <li>
               <a href="{{ .URL }}" class="text-sm text-muted hover:text-accent transition-colors">{{ .Name }}</a>

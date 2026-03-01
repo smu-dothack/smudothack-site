@@ -4,8 +4,11 @@ date: {{ .Date }}
 draft: false
 description: ""
 status: "planning"
-event_date: ""
-event_time: ""
+start_date: ""
+end_date: ""
+start_time: ""
+end_time: ""
+all_day: false
 location: ""
 poster: ""
 signup_url: ""
