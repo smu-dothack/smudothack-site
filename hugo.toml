@@ -2,6 +2,7 @@ baseURL = 'https://smudothack.com/'
 languageCode = 'en-sg'
 title = 'SMU .Hack'
 theme = 'dothack'
+buildFuture = true
 
 # Build settings for Tailwind CSS v4
 [build]

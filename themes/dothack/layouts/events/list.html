@@ -1,0 +1,36 @@
+{{ define "main" }}
+<div class="container mx-auto px-6 py-16">
+  <h1 class="text-4xl font-heading font-bold mb-12">{{ .Title }}</h1>
+
+  {{/* Category filter tabs */}}
+  <div class="flex flex-wrap gap-3 mb-10" id="event-filters">
+    <button class="filter-tab active" data-filter="all">All</button>
+    <button class="filter-tab" data-filter="up-next">Up Next</button>
+    <button class="filter-tab" data-filter="planning">Planning</button>
+    <button class="filter-tab" data-filter="done">Done</button>
+  </div>
+
+  {{/* Event cards grid */}}
+  {{ $events := .Pages.ByParam "event_date" }}
+  {{ if $events }}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {{ range $events.Reverse }}
+        <div data-event-status="{{ .Params.status }}">
+          {{ partial "event-card.html" . }}
+        </div>
+      {{ end }}
+    </div>
+  {{ else }}
+    <p class="text-muted">No events yet. Check back soon!</p>
+  {{ end }}
+</div>
+{{ end }}
+
+{{ define "scripts" }}
+{{ $opts := dict "targetPath" "js/events-filter.js" "minify" hugo.IsProduction }}
+{{ $js := resources.Get "js/events-filter.ts" | js.Build $opts }}
+{{ if hugo.IsProduction }}
+  {{ $js = $js | fingerprint }}
+{{ end }}
+<script src="{{ $js.RelPermalink }}" defer></script>
+{{ end }}
