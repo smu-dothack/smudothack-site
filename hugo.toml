@@ -1,4 +1,4 @@
-baseURL = 'https://smu-dothack.github.io/smudothack-site/'
+baseURL = '/'
 languageCode = 'en-sg'
 title = 'SMU .Hack'
 theme = 'dothack'
@@ -34,8 +34,9 @@ buildFuture = true
 [params]
   description = "SMU .Hack — Singapore Management University's Tech Club. Build. Break. Learn."
   tagline = "Build. Break. Learn."
-  joinFormURL = "https://forms.gle/your-form-id"
+  joinFormURL = "https://t.me/+wY8y_HFsNq5iZDVl"
   githubOrg = "https://github.com/smu-dothack"
+  currentTeamYear = "ay2025_2026"
 
   [params.social]
     discord = ""
@@ -43,7 +44,7 @@ buildFuture = true
     github = "https://github.com/smu-dothack"
     instagram = "https://www.instagram.com/smu.hack/"
     linkedin = "https://www.linkedin.com/company/smuhack/"
-    email = ""
+    email = "dothack@sa.smu.edu.sg"
 
 [taxonomies]
   tag = "tags"

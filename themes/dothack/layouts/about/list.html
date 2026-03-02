@@ -7,28 +7,34 @@
     {{ .Content }}
   </div>
 
-  {{/* Exco Members */}}
-  {{ with .Site.Data.members.exco }}
+  {{/* Our Team - Departments */}}
+  {{ $currentYear := .Site.Params.currentTeamYear }}
+  {{ with (index .Site.Data.teams $currentYear).departments }}
     <section>
-      <h2 class="text-3xl font-heading font-bold mb-8">Our Team</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <h2 class="text-3xl font-heading font-bold mb-10">Our Team</h2>
+      <div class="space-y-12">
         {{ range sort . "order" }}
-          {{ partial "member-card.html" . }}
+          <div>
+            <h3 class="text-2xl font-heading font-semibold mb-4 text-accent">{{ .name }}</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {{ range .members }}
+                {{ partial "member-card.html" . }}
+              {{ end }}
+            </div>
+          </div>
         {{ end }}
       </div>
     </section>
   {{ end }}
 
-  {{/* Alumni (optional) */}}
-  {{ with .Site.Data.members.alumni }}
-    <section class="mt-20">
-      <h2 class="text-3xl font-heading font-bold mb-8">Alumni</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {{ range . }}
-          {{ partial "member-card.html" . }}
-        {{ end }}
-      </div>
-    </section>
-  {{ end }}
+  {{/* Past Teams link */}}
+  <div class="mt-16 text-center">
+    <a href="{{ site.Home.RelPermalink }}about/past-teams/" class="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors font-heading font-semibold">
+      View Past Teams
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
 </div>
 {{ end }}

@@ -1,0 +1,109 @@
+label: "AY2025-2026"
+departments:
+  - name: "Big 4"
+    order: 1
+    members:
+      - name: "Lee Yi Terng"
+        bio: "Is the President and an Information Systems undergrad."
+      - name: "Minn Ong"
+        bio: "Is the Vice President and a Software Engineering undergrad."
+      - name: "Yeo Wei Ting"
+        bio: "Is the Honorary General Secretary and an Information Systems undergrad."
+      - name: "Hansen Lim Ke Xuan"
+        bio: "Is the Honorary Finance Secretary and an Information Systems undergrad."
+
+  - name: "Tech & Google Dev Group"
+    order: 2
+    members:
+      - name: "Goh Xuan Yu Oliver"
+        bio: "Is the Technology & GDG Director and a Computer Science undergrad."
+      - name: "Lim Dong Kiat"
+        bio: "Is the Technology & GDG Director and a Computer Science undergrad."
+      - name: "Tan Wei Jun Terris"
+        bio: "Is an Information Systems undergrad."
+      - name: "Joey Saw"
+        bio: "Is an Information Systems undergrad."
+      - name: "Lim Zhi Yu"
+        bio: "Is a Software Engineering undergrad."
+      - name: "Yuen Wai Yee"
+        bio: "Is an Information Systems undergrad."
+      - name: "Hoo Jun Ming"
+        bio: "Is a Computer Science undergrad."
+
+  - name: "Training"
+    order: 3
+    members:
+      - name: "Don Ang Rui Ze"
+        bio: "Is the Training Director and a Software Engineering undergrad."
+      - name: "Lim Jun Chen"
+        bio: "Is an Information Systems undergrad."
+      - name: "Verlin Veriandra Fortuna"
+        bio: "Is a Software Engineering undergrad."
+      - name: "Ariq Lim Kiat Siang"
+        bio: "Is a Software Engineering undergrad."
+      - name: "Nathaniel Teo"
+        bio: "Is a Software Engineering undergrad."
+      - name: "Janelle Ip Yan Ling"
+        bio: "Is an Information Systems undergrad."
+      - name: "Chew Kar Weng Brian"
+        bio: "Is an Information Systems undergrad."
+
+  - name: "Cloud"
+    order: 4
+    members:
+      - name: "Tan Yueh Yang Vince"
+        bio: "Is the Cloud Director and a Computer Science undergrad."
+      - name: "Hansen Lim Ke Xuan"
+        bio: "Is an Information Systems undergrad."
+      - name: "Yew Ying Xuan"
+        bio: "Is a Computer Science undergrad."
+      - name: "Sathwik Chiluveru"
+        bio: "Is a Software Engineering undergrad."
+      - name: "Yam Kar Lok"
+        bio: "Is a Computer Science undergrad."
+      - name: "Wai Zin Lin"
+        bio: "Is a Computer Science undergrad."
+
+  - name: "Marketing"
+    order: 5
+    members:
+      - name: "Cassia Tay Kaixin"
+        bio: "Is the Marketing Director and an Information Systems undergrad."
+      - name: "Tan Geok Jia"
+        bio: "Is an Information Systems undergrad."
+      - name: "Aashmiin Kaur"
+        bio: "Is an Accounting undergrad."
+      - name: "Agnella Agrata"
+        bio: "Is an Information Systems undergrad."
+      - name: "Josette Ong Chu Wen"
+        bio: "Is an Information Systems undergrad."
+
+  - name: "Public Relations"
+    order: 6
+    members:
+      - name: "Tan Yee Ming"
+        bio: "Is the Public Relations Director and a Computer Science undergrad."
+      - name: "Khalil-Amir Sulaiman Weaver"
+        bio: "Is a Computer Science undergrad."
+      - name: "Justin Lim Ee Zen"
+        bio: "Is an Information Systems undergrad."
+      - name: "Teo Jia Cheng"
+        bio: "Is an Information Systems undergrad."
+      - name: "Li Shiyin"
+        bio: "Is an Information Systems undergrad."
+
+  - name: "Professional Development"
+    order: 7
+    members:
+      - name: "Chua Jia An"
+        bio: "Is the Professional Development Director and a Computer Science undergrad."
+      - name: "Ho Wan Jing Vanetia"
+        bio: "Is an Information Systems undergrad."
+      - name: "Teo Mou Kai"
+        bio: "Is a Computer Science undergrad."
+      - name: "Pramithi Ashok Anand"
+        bio: "Is a Computing and Law undergrad."
+      - name: "Sheryl Chan Swee Yann"
+        bio: "Is an Information Systems undergrad."
+      - name: "Charissa Tan Shuen En"
+        bio: "Is a Computer Science undergrad."
