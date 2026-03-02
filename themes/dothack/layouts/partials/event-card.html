@@ -1,5 +1,5 @@
 {{ $status := cond (eq .Params.status "confirmed") "up-next" .Params.status }}
-<a href="{{ .Permalink }}" class="block rounded-xl border border-border bg-surface hover:border-accent transition-colors overflow-hidden group"
+<a href="{{ .Permalink }}" class="flex flex-col h-full rounded-xl border border-border bg-surface hover:border-accent transition-colors overflow-hidden group"
   data-start-date="{{ .Params.start_date }}"
   data-end-date="{{ .Params.end_date }}"
   data-start-time="{{ .Params.start_time }}"
@@ -12,7 +12,7 @@
       <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
     </div>
   {{ end }}
-  <div class="p-5">
+  <div class="p-5 flex-1">
     {{/* Status badge */}}
     {{ with $status }}
       <span class="inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono rounded

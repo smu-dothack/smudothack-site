@@ -4,18 +4,15 @@
 
   {{/* Category filter tabs */}}
   <div class="flex flex-wrap gap-3 mb-10" id="event-filters">
-    <button class="filter-tab active" data-filter="live">Live</button>
-    <button class="filter-tab" data-filter="up-next">Up Next</button>
-    <button class="filter-tab" data-filter="planning">Planning</button>
+    <button class="filter-tab active" data-filter="up-next">Up Next</button>
     <button class="filter-tab" data-filter="done">Done</button>
-    <button class="filter-tab" data-filter="all">All</button>
   </div>
 
   {{/* Event cards grid — collect from all year subdirectories */}}
   {{ $events := where site.RegularPages "Section" "events" }}
   {{ if $events }}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {{ range $events.Reverse }}
+      {{ range $events }}
         <div data-event-status="{{ cond (eq .Params.status "confirmed") "up-next" .Params.status }}">
           {{ partial "event-card.html" . }}
         </div>
