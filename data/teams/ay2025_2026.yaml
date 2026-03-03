@@ -4,9 +4,9 @@ departments:
     order: 1
     members:
       - name: "Lee Yi Terng"
-        bio: "Is the President and an Information Systems undergrad."
+        bio: "Is the Club President and an Information Systems undergrad."
       - name: "Minn Ong"
-        bio: "Is the Vice President and a Software Engineering undergrad."
+        bio: "Is the Club Vice President and a Software Engineering undergrad."
       - name: "Yeo Wei Ting"
         bio: "Is the Honorary General Secretary and an Information Systems undergrad."
       - name: "Hansen Lim Ke Xuan"
@@ -15,10 +15,10 @@ departments:
   - name: "Tech & Google Dev Group"
     order: 2
     members:
-      - name: "Goh Xuan Yu Oliver"
-        bio: "Is the Technology & GDG Director and a Computer Science undergrad."
       - name: "Lim Dong Kiat"
-        bio: "Is the Technology & GDG Director and a Computer Science undergrad."
+        bio: "Is the Tech & GDG Director and a Computer Science undergrad. He is a side quest enthusiast who dabbles in all kinds of music, arts and adventure sports. He dedicates his professional work to helping others and is working in a startup that supports the elderly using AI and robots. Contactable via <a href=\"https://www.linkedin.com/in/dongkiatlim\" target=\"_blank\" class=\"text-accent hover:text-accent-hover\">LinkedIn</a>."
+      - name: "Goh Xuan Yu Oliver"
+        bio: "Is the Tech & GDG Director and a Computer Science undergrad."
       - name: "Tan Wei Jun Terris"
         bio: "Is an Information Systems undergrad."
       - name: "Joey Saw"
