@@ -9,7 +9,7 @@ SMU .Hack is Singapore Management University's premier tech club. We're a commun
 
 ## What We Do
 
-- **Workshops** — Hands-on sessions on web development, cybersecurity, AI/ML, and more
+- **Workshops** — Hands-on sessions on the latest tools, web development, AI/ML, and more
 - **Hackathons** — Build projects, compete, and collaborate
 - **Tech Talks** — Learn from industry professionals and fellow students
 - **Project Teams** — Work on real-world projects with other members
