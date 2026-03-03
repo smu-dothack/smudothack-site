@@ -1,6 +1,6 @@
 <div class="rounded-xl border border-border bg-surface p-5">
   <h4 class="font-heading font-semibold text-lg">{{ .name }}</h4>
   {{ with .bio }}
-    <p class="text-sm text-muted mt-1">{{ . }}</p>
+    <p class="text-sm text-muted mt-1 text-justify">{{ . | safeHTML }}</p>
   {{ end }}
 </div>

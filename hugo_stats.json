@@ -193,6 +193,7 @@
       "text-accent",
       "text-bg",
       "text-center",
+      "text-justify",
       "text-lg",
       "text-muted",
       "text-muted/80",
