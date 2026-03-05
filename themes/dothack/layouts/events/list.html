@@ -13,7 +13,7 @@
   {{ if $events }}
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {{ range $events }}
-        <div data-event-status="{{ cond (eq .Params.status "confirmed") "up-next" .Params.status }}">
+        <div data-event-status="{{ partial "compute-event-status.html" . }}">
           {{ partial "event-card.html" . }}
         </div>
       {{ end }}

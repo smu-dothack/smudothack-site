@@ -1,4 +1,4 @@
-{{ $status := cond (eq .Params.status "confirmed") "up-next" .Params.status }}
+{{ $status := partial "compute-event-status.html" . }}
 <a href="{{ .Permalink }}" class="flex flex-col h-full rounded-xl border border-border bg-surface hover:border-accent transition-colors overflow-hidden group"
   data-start-date="{{ .Params.start_date }}"
   data-end-date="{{ .Params.end_date }}"

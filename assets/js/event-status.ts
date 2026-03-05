@@ -71,10 +71,18 @@ document.addEventListener('DOMContentLoaded', () => {
       },
       now
     );
-    if (!newStatus) return;
 
-    const badge = article.querySelector<HTMLElement>('[data-status]');
-    if (badge) updateBadge(badge, newStatus);
+    if (newStatus) {
+      const badge = article.querySelector<HTMLElement>('[data-status]');
+      if (badge) updateBadge(badge, newStatus);
+    }
+
+    // Always update the "Back to Events" link hash to match the actual status
+    const finalStatus = newStatus || article.dataset.status;
+    const backLink = article.querySelector<HTMLAnchorElement>('a[href*="/events/#"]');
+    if (backLink && finalStatus) {
+      backLink.href = backLink.href.replace(/#.*$/, `#${finalStatus}`);
+    }
   });
 
   // Notify other scripts (e.g. events-filter) that statuses have been updated

@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $status := cond (eq .Params.status "confirmed") "up-next" .Params.status }}
+{{ $status := partial "compute-event-status.html" . }}
 <article class="container mx-auto px-6 py-16 max-w-4xl"
   data-start-date="{{ .Params.start_date }}"
   data-end-date="{{ .Params.end_date }}"

@@ -1,0 +1,23 @@
+{{/*
+  Compute display status for an event page.
+  Confirmed events with auto_status are upgraded to ongoing/done based on dates at build time.
+  JS (event-status.ts) further refines with time-level precision at runtime.
+*/}}
+{{ $status := .Params.status }}
+{{ if eq $status "confirmed" }}
+  {{ $autoStatus := .Params.auto_status | default true }}
+  {{ if and $autoStatus .Params.start_date }}
+    {{ $endDateStr := cond (and .Params.end_date (ne (print .Params.end_date) "")) (print .Params.end_date) (print .Params.start_date) }}
+    {{ $today := now.Format "2006-01-02" }}
+    {{ if gt $today $endDateStr }}
+      {{ $status = "done" }}
+    {{ else if ge $today (print .Params.start_date) }}
+      {{ $status = "ongoing" }}
+    {{ else }}
+      {{ $status = "up-next" }}
+    {{ end }}
+  {{ else }}
+    {{ $status = "up-next" }}
+  {{ end }}
+{{ end }}
+{{ return $status }}
