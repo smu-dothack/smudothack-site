@@ -4,7 +4,7 @@ Guides for maintaining and updating the SMU .Hack website.
 
 ## Ops Structure
 
-For any changes and discussions, first create an issue and then inform the tech department should it need to acted on in a more timely manner. Make sure the issue contains all the info/changes that you want, including images if any.
+For any changes and discussions, first create an issue and then inform the tech department should it need to be acted on in a more timely manner. Make sure the issue contains all the info/changes that you want, including images if any.
 
 For addition/updating of events/projects, after creation of the issue, you can either choose to create the PR yourself or have the tech department do it. Make sure to inform the tech exec assigned to your deparment.
 
