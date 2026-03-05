@@ -7,8 +7,8 @@ status: "done"
 auto_status: true
 start_date: "2025-10-15"
 end_date: ""
-start_time: ""
-end_time: ""
+start_time: "3:00pm"
+end_time: "6:00pm"
 all_day: false
 location: "T-Junction"
 poster: ""

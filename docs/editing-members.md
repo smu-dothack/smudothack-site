@@ -2,6 +2,10 @@
 
 Team members are stored in per-year YAML files under `data/teams/`. The current team year is set in `hugo.toml` via the `currentTeamYear` param.
 
+## Before You Start
+
+[Create a GitHub issue](https://github.com/smu-dothack/smudothack-site/issues/new) describing what you plan to change (e.g., "Add new member to Cloud department"). Apply the **`update contents`** label so the team is aware.
+
 ## File Structure
 
 Each academic year has its own file (e.g., `data/teams/ay2025_2026.yaml`):

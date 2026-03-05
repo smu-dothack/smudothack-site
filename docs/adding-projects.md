@@ -2,13 +2,18 @@
 
 ## Quick Steps
 
-1. Create a new file in `content/projects/`
-2. Fill in the front matter
-3. Write the project description
-4. Add a screenshot (optional)
-5. Submit a pull request
+1. Create an issue on GitHub with the `update projects` label
+2. Create a new file in `content/projects/`
+3. Fill in the front matter
+4. Write the project description
+5. Add a screenshot (optional)
+6. Submit a pull request
 
-## Step 1: Create the File
+## Step 1: Create an Issue
+
+Before adding a project, [create a GitHub issue](https://github.com/smu-dothack/smudothack-site/issues/new) describing the project you plan to add. Apply the **`update projects`** label so the team is aware.
+
+## Step 2: Create the File
 
 ### Option A: Using Hugo CLI
 
@@ -20,7 +25,7 @@ hugo new projects/my-project-name.md
 
 Create `content/projects/my-project-name.md`.
 
-## Step 2: Fill in the Front Matter
+## Step 3: Fill in the Front Matter
 
 ```yaml
 ---
@@ -50,7 +55,7 @@ featured: false                                   # Set true to show on landing 
 | `demo_url` | No | Link to live demo |
 | `featured` | No | Show on landing page (default: false) |
 
-## Step 3: Write the Description
+## Step 4: Write the Description
 
 ```markdown
 A brief description of what the project does and why it exists.
@@ -66,14 +71,14 @@ A brief description of what the project does and why it exists.
 Explain the architecture or how to use it.
 ```
 
-## Step 4: Add a Screenshot (Optional)
+## Step 5: Add a Screenshot (Optional)
 
 1. Add the image to `static/images/projects/`
    - Recommended: JPG or PNG, under 500KB
    - Recommended: 16:9 ratio (e.g., 1280x720)
 2. Set `screenshot: "/images/projects/my-project.jpg"`
 
-## Step 5: Submit a PR
+## Step 6: Submit a PR
 
 ```bash
 git checkout -b add-project/my-project-name

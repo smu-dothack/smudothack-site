@@ -2,6 +2,34 @@
 
 Guides for maintaining and updating the SMU .Hack website.
 
+## Ops Structure
+
+For any changes and discussions, first create an issue and then inform the tech department should it need to acted on in a more timely manner. Make sure the issue contains all the info/changes that you want, including images if any.
+
+For addition/updating of events/projects, after creation of the issue, you can either choose to create the PR yourself or have the tech department do it. Make sure to inform the tech exec assigned to your deparment.
+
+If creating the PR yourself, make sure to obtain the relevant permissions from the tech department to have proper access.
+
+Tech Exec Assignments:
+
+| Department | Tech Exec |
+| ---------- | --------- |
+| Training         | |
+| Cloud, Marketing | |
+| PR, PD           | |
+
+## Before You Start
+
+Before making any changes, **create a GitHub issue** describing what you plan to do. This keeps the team informed and avoids duplicate work.
+
+Use the appropriate label for your issue:
+
+| Label | Use for |
+|-------|---------|
+| `update events` | Adding or editing events |
+| `update projects` | Adding or editing projects |
+| `update contents` | Editing members, page content, or other site updates |
+
 ## I want to...
 
 | Task | Guide |

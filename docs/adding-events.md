@@ -2,13 +2,18 @@
 
 ## Quick Steps
 
-1. Create a new file in the correct year subdirectory (e.g., `content/events/2026/`)
-2. Fill in the front matter
-3. Write the event description in markdown
-4. Add a poster image (optional)
-5. Submit a pull request
+1. Create an issue on GitHub with the `update events` label
+2. Create a new file in the correct year subdirectory (e.g., `content/events/2026/`)
+3. Fill in the front matter
+4. Write the event description in markdown
+5. Add a poster image (optional)
+6. Submit a pull request
 
-## Step 1: Create the File
+## Step 1: Create an Issue
+
+Before adding an event, [create a GitHub issue](https://github.com/smu-dothack/smudothack-site/issues/new) describing the event you plan to add. Apply the **`update events`** label so the team is aware.
+
+## Step 2: Create the File
 
 Events are organised by year. Place your event in the matching year folder.
 
@@ -38,7 +43,7 @@ Create a new file at `content/events/2026/my-event-name.md`.
 > ---
 > ```
 
-## Step 2: Fill in the Front Matter
+## Step 3: Fill in the Front Matter
 
 Every event file starts with front matter (the section between `---` markers):
 
@@ -127,7 +132,7 @@ end_time: ""
 all_day: false
 ```
 
-## Step 3: Write the Description
+## Step 4: Write the Description
 
 Below the front matter, write the event description in markdown:
 
@@ -146,14 +151,14 @@ A hands-on workshop covering the basics of Python.
 - No prior experience needed
 ```
 
-## Step 4: Add a Poster Image (Optional)
+## Step 5: Add a Poster Image (Optional)
 
 1. Add your poster image to `static/images/events/`
    - Recommended: JPG or PNG, under 500KB
    - Recommended dimensions: 1200x630px (or 16:9 ratio)
 2. Set the `poster` field: `poster: "/images/events/my-event.jpg"`
 
-## Step 5: Submit a PR
+## Step 6: Submit a PR
 
 ```bash
 git checkout -b add-event/my-event-name
