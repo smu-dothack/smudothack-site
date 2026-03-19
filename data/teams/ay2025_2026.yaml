@@ -1,30 +1,60 @@
 label: "AY2025-2026"
+<!-- TODO: Check preferred display name -->
 departments:
   - name: "Big 4"
     order: 1
     members:
-      - name: "Lee Yi Terng"
-        bio: "Is the Club President and an Information Systems undergrad."
-      - name: "Minn Ong"
-        bio: "Is the Club Vice President and a Software Engineering undergrad."
+      - name: "Yi Terng"
+        bio: "Is the Club President and an Information Systems undergrad. He is an apprentice lgtm, 👍"
+      - name: "Minn"
+        bio: "Is the Club Vice President and a Software Engineering undergrad. She is a Novice lgtm, 👍"
       - name: "Yeo Wei Ting"
-        bio: "Is the Honorary General Secretary and an Information Systems undergrad."
-      - name: "Hansen Lim Ke Xuan"
-        bio: "Is the Honorary Finance Secretary and an Information Systems undergrad."
+        bio: >
+          Is the Honorary General Secretary and an Information Systems undergrad. 
+          She is interested in data analytics and enjoys discovering insights from data. 
+          Outside of that, she enjoys good food, music, and travelling. 
+          Connect with her via <a href="https://www.linkedin.com/in/wei-ting-yeo-2a28o5/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
+      - name: "Hansen Lim"
+        bio: >
+          Is the Honorary Finance Secretary and an Information Systems undergrad. 
+          From a shadow member in Y2, to being a PD director at Y3 and now our money boss in Y4? 
+          He doesn't claim to do everything, or does he? 
+          Find out yourself at <a href="https://www.linkedin.com/in/hansen-lim/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
 
   - name: "Tech & Google Dev Group"
     order: 2
     members:
       - name: "Lim Dong Kiat"
-        bio: "Is the Tech & GDG Director and a Computer Science undergrad. He is a side quest enthusiast who dabbles in all kinds of music, arts and adventure sports. He dedicates his professional work to helping others and is working in a startup that supports the elderly using AI and robots. Contactable via <a href=\"https://www.linkedin.com/in/dongkiatlim\" target=\"_blank\" class=\"text-accent hover:text-accent-hover\">LinkedIn</a>."
-      - name: "Goh Xuan Yu Oliver"
-        bio: "Is the Tech & GDG Director and a Computer Science undergrad."
+        bio: >
+          Is the Tech & GDG Director and a Computer Science undergrad. 
+          He is a side quest enthusiast who dabbles in all kinds of music, arts and adventure sports. 
+          He dedicates his professional work to helping others and is working in a startup that supports the elderly using AI and robots.
+          Contactable via <a href="https://www.linkedin.com/in/dongkiatlim/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
+      - name: "Oliver"
+        bio: >
+          Is the Tech & GDG Director and a Computer Science undergrad.
+          He likes to get his hands dirty and experience all facets of technology including but not limited to building software, LLMs, hardware etc.. 
+          He somehow has an excavator license? Off the clock, he's busy optimizing his games, nerding out about his interests, and finding the next best place to eat at. 
+          Find out more about him on <a href="https://www.linkedin.com/in/kzeezee-dev/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a> or check out his code on <a href="https://github.com/Kzeezee/" target="_blank" class="text-accent hover:text-accent-hover">GitHub</a>.
+
       - name: "Tan Wei Jun Terris"
-        bio: "Is a Tech & GDG Executive and an Information Systems undergrad."
+        bio: >
+          Is a Tech & GDG Executive and an Information Systems undergrad. 
+          He peaked at year 2 and has since graduated. 
+          He lost his secret keys after his laptop died coming back from Iceland alive.
+          Find out more about him at his outdated <a href="https://terris-portfolio.vercel.app/" target="_blank" class="text-accent hover:text-accent-hover">Website</a>.
       - name: "Joey Saw"
-        bio: "Is a Tech & GDG Executive and an Information Systems undergrad."
-      - name: "Lim Zhi Yu"
-        bio: "Is a Tech & GDG Executive and a Software Engineering undergrad."
+        bio: >
+          Is a Tech & GDG Executive and an Information Systems undergrad. 
+          Joey specialises in business analytics and is probably watching a Chinese drama between meetings. 
+          When not crunching numbers, she stays active with fitness and sports. 
+          Connect with her on <a href="https://www.linkedin.com/in/joey-saw-665499341/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
+      - name: "Livie Lim"
+        bio: >
+          Is a Tech & GDG Executive and a Software Engineering undergrad.
+          Her tech interest lies in smart city related technologies and projects. 
+          Outside of tech, she enjoys dancing and exploring different choreography genres, giving both sides of her brain equal runtime. 
+          Connect with her on <a href="https://www.linkedin.com/in/zhi-yu-lim-0z7/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Yuen Wai Yee"
         bio: "Is a Tech & GDG Executive and an Information Systems undergrad."
       - name: "Hoo Jun Ming"
@@ -33,18 +63,38 @@ departments:
   - name: "Training"
     order: 3
     members:
-      - name: "Don Ang Rui Ze"
-        bio: "Is the Training Director and a Software Engineering undergrad."
-      - name: "Lim Jun Chen"
-        bio: "Is a Training Executive and an Information Systems undergrad."
+      - name: "Don"
+        bio: >
+          Is the Training Director and a Software Engineering undergrad.
+          Don enjoys learning new stuff about tech and doing hacks with kakis
+      - name: "Jun Chen (JC)"
+        bio: >
+          Is a Training Executive and an Information Systems undergrad.
+          A rare breed that loves C++ and dabbles in many fields in software. 
+          He try to balance wrangling systems and eating pastries, effectively handling both core dumps and weight loss. 
+          When debugging gets tough, he takes a walk to reset and remember what grass looks like. 
+          You can connect with him on <a href="https://linkedin.com/in/limjunchen/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Verlin Veriandra Fortuna"
         bio: "Is a Training Executive and a Software Engineering undergrad."
-      - name: "Ariq Lim Kiat Siang"
-        bio: "Is a Training Executive and a Software Engineering undergrad."
-      - name: "Nathaniel Teo"
-        bio: "Is a Training Executive and a Software Engineering undergrad."
+      - name: "Ariq"
+        bio: >
+          Is a Training Executive and a Software Engineering undergrad. 
+          He love cars — so if you're driving an EV, you might catch him giving you the side eye. 
+          Also always in dark mode too… because light attracts bugs. 
+          Connect with me on <a href="https://www.linkedin.com/in/ariq-lim/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>!
+      - name: "Nathaniel"
+        bio: >
+          Is a Training Executive and a Software Engineering undergrad. 
+          He likes using react and adding animated backgrounds on websites. 
+          He also has the most random skills, such as knowing how to juggle. 
+          He is 180cm but every machine measures it wrongly at 179cm. 
+          Find out more about him at <a href="https://www.linkedin.com/in/nathaniel-teo-179854340/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Janelle Ip Yan Ling"
-        bio: "Is a Training Executive and an Information Systems undergrad."
+        bio: >
+          Is a Training Executive and an Information Systems undergrad.
+          She is interested in business analytics, product development, and building practical tech solutions. 
+          She enjoys working on data-driven projects and system design challenges, from analytics models to microservice architectures. 
+          Connect with her on <a href="https://www.linkedin.com/in/janelle-ip/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Chew Kar Weng Brian"
         bio: "Is a Training Executive and an Information Systems undergrad."
 
@@ -54,56 +104,109 @@ departments:
       - name: "Tan Yueh Yang Vince"
         bio: "Is the Cloud Director and a Computer Science undergrad."
       - name: "Hansen Lim Ke Xuan"
-        bio: "Is a Cloud Executive and an Information Systems undergrad."
+        bio: >
+          Is a Cloud Executive and an Information Systems undergrad." 
+          From a shadow member in Y2, to being a PD director at Y3 and now our Cloud boss in Y4? 
+          He doesn't claim to do everything, or does he? 
+          Find out yourself at <a href="https://www.linkedin.com/in/hansen-lim/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Yew Ying Xuan"
         bio: "Is a Cloud Executive and a Computer Science undergrad."
       - name: "Sathwik Chiluveru"
-        bio: "Is a Cloud Executive and a Software Engineering undergrad."
+        bio: >
+          Is a Cloud Executive and a Software Engineering undergrad. 
+          He loves partying, traveling, and doing random things just for the pure thrill of free will maxxing. 
+          When he's not out exploring, he's coding, solving problems, and diving into new tech. 
+          Connect with him on <a href="https://www.linkedin.com/in/sathwikchiluveru" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Yam Kar Lok"
         bio: "Is a Cloud Executive and a Computer Science undergrad."
       - name: "Wai Zin Lin"
-        bio: "Is a Cloud Executive and a Computer Science undergrad."
+        bio: >
+          Is a Cloud Executive and a Computer Science undergrad. 
+          He enjoys building reliable systems and cloud infrastructure. 
+          At Accenture, he works on Spring Boot microservices, Spring Batch pipelines, and AWS Lambda-based workflows for large-scale systems. Previously at HTX, he built a data monitoring dashboard platform. 
+          He also runs a homelab and enjoys taking part in hackathons when he has the time. 
+          Connect with him at <a href="https://www.linkedin.com/in/wai-zin-lin" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
 
   - name: "Marketing"
     order: 5
     members:
       - name: "Cassia Tay Kaixin"
-        bio: "Is the Marketing Director and an Information Systems undergrad."
+        bio: >
+          Is the Marketing Director and an Information Systems undergrad. 
+          She is an aspiring backend engineer who also dabbles with databases and cloud. 
+          In her free time, she enjoys the arts and crafts, and is always down for cake and tea. 
+          You can connect with her on <a href="https://www.linkedin.com/in/cassiatay/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Tan Geok Jia"
-        bio: "Is a Marketing Executive and an Information Systems undergrad."
+        bio: >
+          Is a Marketing Executive and an Information Systems undergrad. 
+          Zoey is a UI/UX designer turned developer. 
+          During her free time, she enjoys reading, gaming and petting the neighbourhood cats. 
+          She is still working on her portfolio site, but some of her design works are available on <a href="https://www.behance.net/geokjiatan#" target="_blank" class="text-accent hover:text-accent-hover">Behance</a> 
+          or you can connect with her on <a href="https://www.linkedin.com/in/geok-jia-tan/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Aashmiin Kaur"
         bio: "Is a Marketing Executive and an Accounting undergrad."
       - name: "Agnella Agrata"
         bio: "Is a Marketing Executive and an Information Systems undergrad."
-      - name: "Josette Ong Chu Wen"
-        bio: "Is a Marketing Executive and an Information Systems undergrad."
+      - name: "Josette"
+        bio: >
+          Is a Marketing Executive and an Information Systems undergrad. 
+          She enjoys baking, travelling, and spending time with her family. 
+          She especially loves visiting Japan for its culture and food. 
+          She has been trying to learn to love coding, though it can be challenging at times. 
+          Most days, she is simply doing her best to survive university while learning and growing.
 
   - name: "Public Relations"
     order: 6
     members:
-      - name: "Tan Yee Ming"
-        bio: "Is the Public Relations Director and a Computer Science undergrad."
-      - name: "Khalil-Amir Sulaiman Weaver"
-        bio: "Is a Public Relations Executive and a Computer Science undergrad."
+      - name: "Yee Ming"
+        bio: >
+          Is the Public Relations Director and a Computer Science undergrad. She is a professional lgtm, 👍. 
+          Connect with her at <a href="https://www.linkedin.com/in/tan-yee-ming/" target="_blank" class="text-accent hover:text-accent-hover">The big L</a>.
+      - name: "Amir Weaver"
+        bio: >
+          Is a Public Relations Executive and a Computer Science undergrad.
+          He is an avid mountain climber and rock collector. 
+          Though exploring, he's found an inclination towards low-latency and cybersecurity-adjacent interests. 
+          You can connect with him on <a href="https://www.linkedin.com/in/amir-weaver/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>. 
+          He would really like a job soon!
       - name: "Justin Lim Ee Zen"
-        bio: "Is a Public Relations Executive and an Information Systems undergrad."
+        bio: >
+          Is a Public Relations Executive and an Information Systems undergrad.
+          Justin likes to play sports such as badminton and golf in his free time. 
+          He has a roaring passion for data analytics and software engineering so if you have a job for him you can connect him on <a href="https://www.linkedin.com/in/justinlimeezen/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>. 
       - name: "Teo Jia Cheng"
         bio: "Is a Public Relations Executive and an Information Systems undergrad."
-      - name: "Li Shiyin"
-        bio: "Is a Public Relations Executive and an Information Systems undergrad."
+      - name: "Yin"
+        bio: >
+          Is a Public Relations Executive and an Information Systems undergrad. 
+          She thrives on side quests and staying busy. From leading in the Girls’ Brigade to building software, she constantly explores new challenges. 
+          She enjoys developing side projects and finding creative solutions to problems. 
+          Explore her work on <a href="https://github.com/yinasaurus/" target="_blank" class="text-accent hover:text-accent-hover">Github</a> and connect via with her on <a href="https://www.linkedin.com/in/li-shiyin/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
 
   - name: "Professional Development"
     order: 7
     members:
       - name: "Chua Jia An"
         bio: "Is the Professional Development Director and a Computer Science undergrad."
-      - name: "Ho Wan Jing Vanetia"
-        bio: "Is a Professional Development Executive and an Information Systems undergrad."
+      - name: "Vanetia"
+        bio: >
+          Is a Professional Development Executive and an Information Systems undergrad.
+          She enjoys watching sunsets and spotting planes overhead whenever she gets the chance, appreciating the quiet moments they bring.
+          Outside of that, she spends time working on projects and sharing them on <a href="https://github.com/vanetiaho" target="_blank" class="text-accent hover:text-accent-hover">Github</a>.
+          She is always happy to connect professionally and exchange ideas on <a href="https://www.linkedin.com/in/vanetia/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Teo Mou Kai"
         bio: "Is a Professional Development Executive and a Computer Science undergrad."
-      - name: "Pramithi Ashok Anand"
-        bio: "Is a Professional Development Executive and a Computing and Law undergrad."
+      - name: "Pramithi"
+        bio: >
+          Is a Professional Development Executive and a Computing and Law undergrad. 
+          She loves to dance, reading anything she can get her hands on, and getting lost in new ideas. 
+          If you ever want to have a debate on the implications of AI in the courtroom, she's your girl. 
+          When she is not working or studying, she is probably planning  her next food adventure. 
+          Connect with her at <a href="https://www.linkedin.com/in/pramithi-ashok-069406333/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a> for some recommendations!
       - name: "Sheryl Chan Swee Yann"
         bio: "Is a Professional Development Executive and an Information Systems undergrad."
-      - name: "Charissa Tan Shuen En"
-        bio: "Is a Professional Development Executive and a Computer Science undergrad."
+      - name: "Charissa Tan"
+        bio: >
+          Is a Professional Development Executive and a Computer Science undergrad. 
+          She likes potato dishes and has a cute dog. You can connect with her on <a href="https://www.linkedin.com/in/charissatan2005/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
+
