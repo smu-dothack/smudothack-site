@@ -8,5 +8,8 @@
     "@tailwindcss/cli": "^4.0.0",
     "@tailwindcss/typography": "^0.5.19",
     "vitest": "^4.0.18"
+  },
+  "dependencies": {
+    "tailwind": "^2.3.1"
   }
 }
