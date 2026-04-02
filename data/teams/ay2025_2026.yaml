@@ -55,7 +55,11 @@ departments:
           Outside of tech, she enjoys dancing and exploring different choreography genres, giving both sides of her brain equal runtime. 
           Connect with her on <a href="https://www.linkedin.com/in/zhi-yu-lim-0z7/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Yuen Wai Yee"
-        bio: "Is a Tech & GDG Executive and an Information Systems undergrad."
+        bio: >
+          Wai Yee is a Tech & GDG Executive and an Information Systems undergraduate.
+          Her interests lie in software engineering and fintech projects.
+          Outside of tech, she enjoys archery and sipping matcha.
+          Connect with her on <a href="https://www.linkedin.com/in/wai-yee-yuen/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Hoo Jun Ming"
         bio: "Is a Tech & GDG Executive and a Computer Science undergrad."
 
@@ -74,7 +78,10 @@ departments:
           When debugging gets tough, he takes a walk to reset and remember what grass looks like. 
           You can connect with him on <a href="https://linkedin.com/in/limjunchen/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Verlin Veriandra Fortuna"
-        bio: "Is a Training Executive and a Software Engineering undergrad."
+        bio: "Is a Training Executive and a Software Engineering undergrad. 
+              She loves baking, singing in the shower, shrek and the arts in general.
+              Being a Software Engineering student, this translates to her love for exploring frontend development and UI/UX design as she aims to bridge art and technology. 
+              Feel free to connect with her at: https://www.linkedin.com/in/verlin-veriandra-972736326/"
       - name: "Ariq"
         bio: >
           Is a Training Executive and a Software Engineering undergrad. 
@@ -95,13 +102,16 @@ departments:
           She enjoys working on data-driven projects and system design challenges, from analytics models to microservice architectures. 
           Connect with her on <a href="https://www.linkedin.com/in/janelle-ip/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Chew Kar Weng Brian"
-        bio: "Is a Training Executive and an Information Systems undergrad."
+        bio: "Is a Training Executive and an Information Systems undergrad.
+              He like servers and code"
 
   - name: "Cloud"
     order: 4
     members:
       - name: "Tan Yueh Yang Vince"
-        bio: "Is the Cloud Director and a Computer Science undergrad."
+        bio: "Is the Cloud Director and a Computer Science undergrad.
+              Vince is a self-proclaimed coffee addict who enjoys overspending on pour-overs and taking therapeutic strolls through grocery aisles. When he isn’t sourcing new beans or neglecting his running routine during the semester, he’s likely working on new projects. 
+              Connect with him at https://www.linkedin.com/in/vincetanyuehyang/"
       - name: "Hansen Lim Ke Xuan"
         bio: >
           Is a Cloud Executive and an Information Systems undergrad." 
@@ -109,7 +119,9 @@ departments:
           He doesn't claim to do everything, or does he? 
           Find out yourself at <a href="https://www.linkedin.com/in/hansen-lim/" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Yew Ying Xuan"
-        bio: "Is a Cloud Executive and a Computer Science undergrad."
+        bio: "Is a Cloud Executive and a Computer Science undergrad.
+            She wants to retire asap and live her taitai life so please give her a good high paying job,
+             find her at https://www.linkedin.com/in/ying-xuan-yew-024425200 to offer her a job!"
       - name: "Sathwik Chiluveru"
         bio: >
           Is a Cloud Executive and a Software Engineering undergrad. 
@@ -117,7 +129,9 @@ departments:
           When he's not out exploring, he's coding, solving problems, and diving into new tech. 
           Connect with him on <a href="https://www.linkedin.com/in/sathwikchiluveru" target="_blank" class="text-accent hover:text-accent-hover">LinkedIn</a>.
       - name: "Yam Kar Lok"
-        bio: "Is a Cloud Executive and a Computer Science undergrad."
+        bio: "Is a Cloud Executive and a Computer Science undergrad.
+            You'll probably find Kar Lok coding or reading tech books almost anywhere. He has too many side projects. So if you're ever interested on some side projects or want to know what tech books to read,
+             you find him on https://www.linkedin.com/in/yamkarlok, https://github.com/kKar1503 or https://t.me/kKar1503."
       - name: "Wai Zin Lin"
         bio: >
           Is a Cloud Executive and a Computer Science undergrad. 
@@ -186,7 +200,9 @@ departments:
     order: 7
     members:
       - name: "Chua Jia An"
-        bio: "Is the Professional Development Director and a Computer Science undergrad."
+        bio: "Is the Professional Development Director and a Computer Science undergrad.
+              Zhuo En enjoys trying to stay alive and tries to sleep 8 hours a day, which rarely happens.
+              You can connect with her on LinkedIn at link[https://linkedin.com/in/ze2]!"
       - name: "Vanetia"
         bio: >
           Is a Professional Development Executive and an Information Systems undergrad.
