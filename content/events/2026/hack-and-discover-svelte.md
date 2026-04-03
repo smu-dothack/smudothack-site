@@ -1,5 +1,5 @@
 ---
-title: "Hack & Discover - Svelte"
+title: "Hack & Discover #2 - Svelte"
 date: 2026-01-15
 draft: false
 description: "Build modern web applications with the Svelte framework."
@@ -17,6 +17,6 @@ all_day: false
 location: "SCIS1 Seminar Room B1-1"
 poster: "/images/events/posters/2026/hack-and-discover-svelte.png"
 signup_url: ""
-resources_url: ""
+resources_url: "https://dothackdrive.notion.site/15330421be9681d78428c9a796ddc638?v=15330421be9681e1a10d000c44458b82&p=33730421be9680dfb46ee221d9f330dd&pm=s"
 tags: ["workshop", "web-dev", "svelte"]
 ---

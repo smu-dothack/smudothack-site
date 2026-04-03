@@ -1,5 +1,5 @@
 ---
-title: "Hack & Discover - LLM"
+title: "Hack & Discover #1 - LLM"
 date: 2025-10-30
 draft: false
 description: "Explore the fundamentals of Large Language Models in this hands-on session."
@@ -18,6 +18,6 @@ all_day: false
 location: "SOE/SCIS2 Seminar Room B1-2"
 poster: "/images/events/posters/2025/hack-and-discover-llm.png"
 signup_url: ""
-resources_url: ""
+resources_url: "https://dothackdrive.notion.site/15330421be9681d78428c9a796ddc638?v=15330421be9681e1a10d000c44458b82&p=2d130421be96800083fcfff7b4108ba3&pm=s"
 tags: ["workshop", "ai", "llm"]
 ---

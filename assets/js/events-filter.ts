@@ -10,17 +10,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const buttons = filters.querySelectorAll<HTMLButtonElement>('.filter-tab');
   const cards = document.querySelectorAll<HTMLElement>('[data-event-status]');
 
+  const emptyMessage = document.getElementById('no-events-message');
+
   function applyFilter(filter: string | undefined): void {
     const reverse = filter === 'up-next';
+    let visibleCount = 0;
     cards.forEach((card, i) => {
       const status = card.dataset.eventStatus;
       const visible =
         (filter === 'up-next' && status !== 'done') ||
         status === filter;
       card.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
       // DOM is newest-first (good for Done); reverse for Up Next so nearest upcoming is first
       card.style.order = reverse ? String(cards.length - i) : '';
     });
+    if (emptyMessage) {
+      emptyMessage.classList.toggle('hidden', visibleCount > 0);
+    }
   }
 
   function activateTab(btn: HTMLButtonElement): void {
