@@ -58,7 +58,7 @@
   {{/* Screenshot */}}
   {{ with .Params.screenshot }}
     <div class="rounded-xl overflow-hidden border border-border mb-10">
-      <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-full h-auto">
     </div>
   {{ end }}
 

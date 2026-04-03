@@ -107,7 +107,7 @@
   {{/* Poster */}}
   {{ with .Params.poster }}
     <div class="rounded-xl overflow-hidden border border-border mb-10">
-      <img src="{{ . }}" alt="{{ $.Title }}" class="w-full h-auto">
+      <img src="{{ . | relURL }}" alt="{{ $.Title }}" class="w-full h-auto">
     </div>
   {{ end }}
 
@@ -130,7 +130,7 @@
     <div class="grid grid-cols-3 gap-4">
       {{ range . }}
         <div class="flex flex-col items-center text-center gap-4 bg-bg border border-border rounded-2xl px-6 py-8">
-          <img src="{{ .photo }}" alt="{{ .name }}"
+          <img src="{{ .photo | relURL }}" alt="{{ .name }}"
                class="w-28 h-28 rounded-full object-cover bg-bg" />
           <div>
             <p class="text-sm font-bold text-text mb-1">{{ .name }}</p>
