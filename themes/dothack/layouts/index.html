@@ -9,7 +9,7 @@
       </h1>
       <p class="text-xl lg:text-2xl text-muted mb-8">{{ .Site.Params.tagline }}</p>
       <p class="text-lg text-muted/80 mb-10">
-        Singapore Management University's tech club. We build things, break things, and learn together.
+        {{ .Params.description }}
       </p>
       {{ $base := site.Home.RelPermalink }}
       <div class="flex flex-wrap gap-4">
