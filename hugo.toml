@@ -74,6 +74,8 @@ buildFuture = true
   name = "Join Us"
   url = "/join/"
   weight = 50
+  [menus.main.params]
+    button = true
 
 [markup]
   [markup.goldmark]
