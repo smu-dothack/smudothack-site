@@ -12,8 +12,12 @@
       {{ range .Site.Menus.main }}
         <li>
           <a href="{{ .URL }}"
+          {{if .Params.button}}
+             class="inline-flex items-center px-4 py-1 rounded-lg bg-accent text-bg font-semibold hover:bg-accent-hover transition-colors {{ if $.IsMenuCurrent "main" . }}text-accent{{ end }}">
+          {{else}}
              class="text-sm font-medium text-muted hover:text-accent transition-colors {{ if $.IsMenuCurrent "main" . }}text-accent{{ end }}">
-            {{ .Name }}
+          {{end}}
+          {{ .Name }}
           </a>
         </li>
       {{ end }}
