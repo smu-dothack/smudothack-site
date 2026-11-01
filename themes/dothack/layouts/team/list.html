@@ -1,0 +1,37 @@
+{{ define "main" }}
+<div class="container mx-auto px-6 py-16">
+  <h1 class="text-4xl font-heading font-bold mb-12">{{ .Title }}</h1>
+
+  {{/* Team content from _index.md */}}
+  <div class="prose prose-invert max-w-3xl mb-20">
+    {{ .Content }}
+  </div>
+  {{/* Our Team - Departments */}}
+  {{ $currentYear := .Site.Params.currentTeamYear }}
+  {{ with (index .Site.Data.teams $currentYear).departments }}
+    <section>
+      <div class="space-y-12">
+        {{ range sort . "order" }}
+          <div>
+            <h3 class="text-2xl font-heading font-semibold mb-4 text-accent">{{ .name }}</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+              {{ range .members }}
+                {{ partial "member-card.html" . }}
+              {{ end }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{/* Past Teams link */}}
+  <div class="mt-16 text-center">
+    <a href="{{ site.Home.RelPermalink }}team/past-teams/" class="inline-flex items-center gap-2 text-accent hover:text-accent-hover transition-colors font-heading font-semibold">
+      View Past Teams
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+{{end}}
