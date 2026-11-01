@@ -66,6 +66,11 @@ buildFuture = true
   weight = 30
 
 [[menus.main]]
+  name = "Our team"
+  url = "/team/"
+  weight = 35
+
+[[menus.main]]
   name = "Contact"
   url = "/contact/"
   weight = 40

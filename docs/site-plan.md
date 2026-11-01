@@ -149,10 +149,12 @@ smudothack-site/
 ### About (`/about/`)
 
 - Club description and mission statement
+
+### Team (`/team/`)
 - Current team members grouped by department (name + bio)
 - Link to Past Teams page
 
-### Past Teams (`/about/past-teams/`)
+### Past Teams (`/team/past-teams/`)
 
 - Filter tabs by academic year (client-side JS)
 - Same department + member card layout as About page
